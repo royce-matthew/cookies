@@ -33,12 +33,19 @@
     text-decoration: none;
     line-height: 6.5rem;
     color: #222;
-}
+  }
 .navi
 {
 
 position:absolute;
-  top:85%; width:60%; left:20%;
+  top:85%; width:60%; left:20%; 
+  padding: 0px;
+  -webkit-box-shadow: 1px 66px 119px -53px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 66px 119px -53px rgba(0,0,0,0.75);
+box-shadow: 1px 66px 119px -53px rgba(0,0,0,0.75);
+
+    z-index: 200;
+
 
 }
 .fix
@@ -72,7 +79,7 @@ top:0%;
 
 
 <div class="navi" >
-  <nav style="padding:5% " align=Center>
+  <nav style="padding:0% " align=Center>
 
     <div class="row" >
       <div class="one-third column" >
@@ -88,13 +95,20 @@ top:0%;
         <a href='#' class="navbar-link">Donate</a>
       
       </div>
+
     </div>
       
   </nav>
 </div>
 
+  <div style="position: absolute; top: 500%;">hello</div>
 
-  <div style="position: absolute; top: 500%;">hello</div> 
+  <div style="position: absolute; top: 140%; left:0%;height:100%;width:100%; background-color:azure; "> 
+<img src="images/cloud.svg" style="margin: 12%;height: 20%; left: 45%;">
+<h1 style="padding-left:12%">Something about a Cloud</h1>
+
+
+  </div>
 <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
