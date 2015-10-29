@@ -1,149 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>BLANK SHEET</title>
 
-    <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/building.css"> 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link href="css/animate.css" rel="stylesheet">
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scrolling-nav.js"></script>
-		<script src="js/SmoothScroll.js"></script>
-		<script src="js/jquery.easing.min.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/easeljs-0.7.0.min.js"></script>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link rel="stylesheet" href="css/skeleton.css">
+
+<style>
+.navbar-link {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    margin-right: 35px;
+    text-decoration: none;
+    line-height: 6.5rem;
+    color: #222;
+}
+.navi
+{
+
+position:absolute;
+  top:85%; width:60%; left:20%;
+
+}
+.fix
+{
+position:fixed;
+top:0%;
+
+}
+
+</style>
+<script src="js/jquery.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 <body>
+<div style="position:absolute; top:0px;" id="home">&nbsp;</div>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 30%;">
+        <h3 >Matthew's Web PlayGround</h3>
+        <p>This is my PlayGround</p>
+      </div>
+    </div>
+  </div>
 
-<div class="navbar">
-<ul class="navlist">
-  <li class="item">Home</li>
-  <li class="item">News</li>
-  <li class="item">Contact</li>
-  <li><input class="navsearch"></li>
-</ul>
+
+
+<div class="navi" >
+  <nav style="padding:5% " align=Center>
+
+    <div class="row" >
+      <div class="one-third column" >
+        <a href='#home' class="navbar-link">Home</a>
+</div>
+       <div class="one-third column" >
+        
+        <a href='#' class="navbar-link">Playground</a>
+      
+      </div>
+      <div class="one-third column" >
+        
+        <a href='#' class="navbar-link">Donate</a>
+      
+      </div>
+    </div>
+      
+  </nav>
 </div>
 
 
-<div id="menu"
-style="
-position:absolute;
-top:120%;
-left:40%;
-width:20%;
-height:25%;
-border:solid;
-border-width:2px;
+  <div style="position: absolute; top: 500%;">hello</div> 
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-
-"
-></div>
-
-
-
-<div style="position:absolute; margin: 2%; top:30%;" id="bot"> Hit the <b>'W' 'A' 'S' 'D'</b> keys to control your character. </div>
-
-<div style="position: fixed; top: 13%; left: 80%"> Yes, it is Scrollable </div>
-<div style="position:absolute; top:250%;" id="bot"> &nbsp;</div>
-<div class="container" style="
-position: absolute;
-top: 20%;
-left: 30%; " id="guy"><img src="images/employee.svg" style="height:10%; width:5%; "></img></div>
-<div class="container" style="
-position: absolute;
-top: 20%;
-left: 50%; " id="npc"><img src="images/blue.svg" style="height:10%; width:5%; "></img></div>
-
-
-
-<h1 id="monitor" style="position: absolute; top: 20%;">_</h1>
 
 
 <script>
-guy= document.getElementById("guy");
-npc=document.getElementById("npc");
-monitor=document.getElementById("monitor");
-function galaw(x,y,man)
+
+$(window).scroll(
+function()
 {
-man.style.top= parseInt(getComputedStyle(man).top)-y+"px";
-man.style.left= parseInt(getComputedStyle(man).left)+x+"px";
+  if($(this).scrollTop()>580)
+  {
+    $(".navi").addClass("fix");
+
+
+  }
+  else
+  {
+    $(".navi").removeClass("fix");
+  }
+
+console.log($(this).scrollTop());
+
 
 }
 
-move=function(e)
-{
-    console.log(e.keyCode);
+
+  );
 
 
-    if (e.keyCode=="87")
-    {
-        galaw(0,10,guy);
-    }
-    else if (e.keyCode=="83")
-    {
-        galaw(0,-10,guy);
-    }
-    else if (e.keyCode=="68")
-    {
-        galaw(10,0,guy);
-    }
-    else if (e.keyCode=="65")
-    {
-        galaw(-10,0,guy);
-    }
-    else
-    {
-
-
-    }
-};
-document.addEventListener("keydown",move);
-d=1;
-e=1;
-roam=function()
-{
-decision = Math.floor((Math.random() * 10) + 1);
-
-x=Math.floor((Math.random() * 3))+8;
-
-    monitor.innerHTML=decision + " "+x+" "+e;
-if (decision<9)
-    {
-        galaw(d*x,e,npc);
-    }
-else
-{
-
-    d=-1*d;
-    e=Math.floor((Math.random() * 3))-1;
-    
-
-}
-
-};
-
-
-tick=function()
-{
-
-roam(npc);
-
-};
-createjs.Ticker.addEventListener("tick",tick);
 
 </script>
 
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
