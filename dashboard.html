@@ -24,12 +24,6 @@
   <link rel="stylesheet" href="css/skeleton.css">
 
 <style>
-.entry{
-  transition: background-color 0.5s ease;
-  border-radius: 4%;
-  position: relative; padding: 4%; margin-top: 30%; height: 50%; background:white;
-
-}
 .navbar-link {
     text-transform: uppercase;
     font-size: 14px;
@@ -111,53 +105,14 @@ top:0%;
 
   <div style="position: absolute; top: 500%;" id="donate">hello</div>
 
-  <div style="position: absolute; top: 140%; left:0%; width:100%; background-color:azure; padding: 2%; min-height:120%;" id="play" > 
+  <div style="position: absolute; top: 140%; left:0%;height:100%;width:100%; background-color:azure; " id="play" > 
+    
+<img src="images/cloud.svg" style="margin: 12%;height: 20%; left: 45%;" >
 
-<h1 style="padding-left:12%; margin-top:10%" id="cloud">Something about a Cloud</h1>
-
-
-<div class="row">
-
-
-      <div class="five columns" >
-          <div class="container entry">
-
-                    <div class="container" style="
-                    position:relative;
-                      height: 250px;
-                      margin-top: 10%;
-                      margin-bottom: 10%;
-                      background-color: #444444;
-                    ">&nbsp;</div>
+<h1 style="padding-left:12%" id="cloud">Something about a Cloud</h1>
 
 
-          <h4>Project: Something</h4>
-          <p>Lorem Impsum asdfggh asdaf asdaf fdfgsdfg sgs e awdklmew ewm</p>
-          <a class="button" href="playground/someshit/index.html">View</a>
-          </div>
-      </div>
-
-      <div class="five columns">
-          <div class="container entry">
-
-            <div class="container" style="
-                    position:relative;
-                      height: 250px;
-                      margin-top: 10%;
-                      margin-bottom: 10%;
-                      background-color: #5f2f3f;
-                    ">&nbsp;</div>
-          <h4>Project: Spark</h4>
-          <p>Lorem Impsum asdfggh asdaf asdaf fdfgsdfg sgs e awdklmew ewm</p>
-          <a class="button" href="playground/someshit/index.html">View</a>
-          </div>
-      </div>
-
-</div>
-</div>
-
-
-
+  </div>
 <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <script src="js/jquery.easing.min.js"></script>
@@ -194,7 +149,7 @@ $(window).scrollY+=20;
 
 });
 play = document.getElementById("play");
-play.addEventListener("click",function(){});
+play.addEventListener("click",function(){alert("hello");});
 </script>
 
 

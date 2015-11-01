@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>You Know you want me</title>
+
+    <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/building.css"> 
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/animate.css" rel="stylesheet">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scrolling-nav.js"></script>
+		<script src="js/SmoothScroll.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/easeljs-0.7.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="navbar">
+<ul class="navlist">
+  <li class="item">Home</li>
+  <li class="item">News</li>
+  <li class="item">Contact</li>
+  <li><input class="navsearch"></li>
+</ul>
+</div>
+
+
+<div id="menu"
+style="
+position:absolute;
+top:120%;
+left:40%;
+width:20%;
+height:25%;
+border:solid;
+border-width:2px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+"
+></div>
+
+
+
+
+
+<div style="position:absolute; top:250%;" id="bot"> &nbsp;</div>
+<div class="container" style="
+position: absolute;
+top: 20%;
+left: 30%; " id="guy"><img src="images/employee.svg" style="height:10%; width:5%; "></img></div>
+<div class="container" style="
+position: absolute;
+top: 20%;
+left: 50%; " id="npc"><img src="images/blue.svg" style="height:10%; width:5%; "></img></div>
+
+
+
+<h1 id="monitor" style="position: absolute; top: 20%;">_</h1>
+
+
+<script>
+guy= document.getElementById("guy");
+npc=document.getElementById("npc");
+monitor=document.getElementById("monitor");
+function galaw(x,y,man)
+{
+man.style.top= parseInt(getComputedStyle(man).top)-y+"px";
+man.style.left= parseInt(getComputedStyle(man).left)+x+"px";
+
+}
+
+move=function(e)
+{
+    console.log(e.keyCode);
+
+
+    if (e.keyCode=="87")
+    {
+        galaw(0,10,guy);
+    }
+    else if (e.keyCode=="83")
+    {
+        galaw(0,-10,guy);
+    }
+    else if (e.keyCode=="68")
+    {
+        galaw(10,0,guy);
+    }
+    else if (e.keyCode=="65")
+    {
+        galaw(-10,0,guy);
+    }
+    else
+    {
+
+
+    }
+};
+document.addEventListener("keydown",move);
+d=1;
+e=1;
+roam=function()
+{
+decision = Math.floor((Math.random() * 10) + 1);
+
+x=Math.floor((Math.random() * 3))+8;
+
+    monitor.innerHTML=decision + " "+x+" "+e;
+if (decision<9)
+    {
+        galaw(d*x,e,npc);
+    }
+else
+{
+
+    d=-1*d;
+    e=Math.floor((Math.random() * 3))-1;
+    
+
+}
+
+};
+
+
+tick=function()
+{
+
+roam(npc);
+
+};
+createjs.Ticker.addEventListener("tick",tick);
+
+</script>
+
+</body>
+</html>
