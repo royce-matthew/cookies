@@ -146,6 +146,13 @@ else
 }
 
 }
+
+saveItem = function()
+{
+  cards.forEach(saveValue);
+
+}
+
 updateItem = function(item)
   {
     content.innerHTML = content.innerHTML+"<tr><td>"+item.question+"</td><td>"+item.answer+"</td></tr>";
@@ -193,7 +200,7 @@ keydown = function(e)
 
 }
 
-cards = [{question:"Question 1",answer:"Answer 1"},{question:"Question 2",answer:"Answer 2"}];
+cards = [];
 
 content.innerHTML = "";
 itago.innerHTML = "Show Values";
