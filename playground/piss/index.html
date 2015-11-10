@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>PISS app </title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+  <div class="container">
+    <div class="row">
+      <div class="ten columns" style="margin-top: 25%">
+        <h4><b>P</b>harmacy <b>I</b>nventory <b>S</b>oftware <b>S</b>ystem <img src='images/pills.svg' style="position:relative;height:75px; padding: 1%; "> </h4>
+        <p>for more fun web Apps visit <a href="http:\\www.tinyurl.com/ChanRoyce">Matthew's Web PlayGround</a></p>
+ <div class="row">
+      <div class="ten columns" style="margin-top: 2%">
+            <input class="u-full-width" value="" placeholder="Search Here (leave blank for all)" id="search">
+      </div>
+      <div class="one columns" style="margin-top: 2%">
+      <button onclick="kwery = search.value;displayAll(search.value);search.value=''">Search</button>
+    </div >
+  </div>
+        <h4><button onclick="addNew()">Add New</button>&nbsp;<button onclick="exports()">export</button> 
+          &nbsp;<button onclick="imports()">import</button>
+        &nbsp;<button href='#' id="delall" onclick="if (confirm('Are You Sure? \n this will delete files forever (a very long time)')){val=[];  localStorage.setItem('val', JSON.stringify(val)); displayAll();} ">Delete All</button>
+        </h4>
+        <table id="display" style="transition: all 1s linear">
+
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+<div id="editBay" style="position:fixed; top:-100%; background-color: rgba(200,200,200,0.9); height:50%; left:30%; width:40%; padding:10%; transition: all 1s ease-in-out; border-radius:10px;">
+  
+      <label >Brand Name</label>
+      <input class="u-full-width" value="0" id="bn">
+
+      <label >Generic Name</label>
+      <input class="u-full-width" value="0" id="gn">
+
+      <label >Retail</label>
+      <input class="u-full-width" value="0" id="rp">
+
+      <label >Wholesale price</label>
+      <input class="u-full-width" value="0" id="wp">
+
+      <label >Stock</label>
+      <input class="u-full-width" value="0" id="st">
+
+      <button onclick="save()">Save</button>
+      <button onclick="del()">Delete</button>
+   
+</div>
+
+
+
+
+
+
+<div id="exportBay" style="position:fixed; top:10%; background-color: rgba(200,210,210,0.92); height:50%; left:-100%; width:40%; padding:10%; transition: all 1s ease-in-out; border-radius:10px;">
+  <h4>Copy the text below and keep it :)</h4>
+  <textarea id="area" ></textarea><br>
+      <button onclick="exportBay.style.left='-100%'">close</button>
+   
+</div>
+
+
+
+
+
+
+
+
+<div id="importBay" style="position:fixed; top:10%; background-color: rgba(150, 202, 242, 0.92); height:50%; left:-100%; width:40%; padding:10%; transition: all 1s ease-in-out; border-radius:10px; ">
+  <h3>Import Bay</h3>
+  <textarea id="importArea"  style="background-color:azure" placeholder="Paste values here :)"></textarea>
+<br>
+      <button onclick="engulf()">Import</button>
+      <button onclick="importBay.style.left='-100%'">close</button>
+   
+</div>
+
+
+
+
+<footer style="margin-top:10%;">
+<hr>
+</footer>
+
+
+
+<script>
+importBay = document.getElementById("importBay");
+searchbar = document.getElementById("search");
+area = document.getElementById("area");
+importArea = document.getElementById("importArea");
+exportBay = document.getElementById("exportBay");
+editBay = document.getElementById("editBay");
+bn = document.getElementById("bn");
+gn = document.getElementById("gn");
+wp = document.getElementById("wp");
+st = document.getElementById("st");
+rp = document.getElementById("rp");
+val = [ ]
+index = 0;
+imports = function()
+{
+  importBay.style.left ="1%" 
+}
+del = function()
+{
+  val.splice(index,1);
+  editBay.style.top="-100%";
+
+  localStorage.setItem('val', JSON.stringify(val));
+  displayAll("");
+}
+engulf = function()
+{
+  val=[];
+var values = importArea.value;
+var len = values.length;
+var i=0;
+
+        var fin = []
+        var line = [];
+        var entry = "";
+      while (i<values.length)
+      {
+        if (values[i] != "\n")
+        {
+              if (values[i]!=",")
+              {
+
+                entry = entry+values[i];
+              }
+              else
+              {
+
+                line.push(entry);
+                entry="";
+              }
+        }
+        else
+        {
+          console.log(line);
+          fin.push(line);
+          line=[];
+
+        }
+
+
+          i = i+1
+      }
+      console.log(fin)
+      console.log(fin.length);
+var j=0;
+while (j<fin.length)
+{
+  addSpecific(fin[j][0],fin[j][1],fin[j][2],fin[j][3],fin[j][4]);
+  j=j+1;
+
+}
+
+      importBay.style.left='-100%'
+      displayAll("");
+      localStorage.setItem('val', JSON.stringify(val));
+
+}
+exports = function()
+{area.value=""
+  val.forEach(function(e){
+    area.value+=e.retailPrice+","+e.wholesalePrice+","+e.stock+","+e.brand+","+e.generic+","+"\n";
+
+  });
+
+exportBay.style.left = "10%";
+
+}
+save = function()
+{
+  val[index].brand = bn.value;
+  val[index].generic = gn.value; 
+  val[index].retailPrice = rp.value;
+
+  val[index].wholesalePrice = wp.value; 
+  val[index].stock = st.value;
+
+
+  editBay.style.top="-100%";
+  displayAll("");
+  localStorage.setItem('val', JSON.stringify(val));
+
+}
+doMe= function(x)
+{
+
+  editBay.style.top="2%";
+  bn.value = val[x].brand;
+  gn.value = val[x].generic;
+  rp.value = val[x].retailPrice;
+  wp.value = val[x].wholesalePrice;
+  st.value = val[x].stock;
+  index = x;
+
+
+}
+
+dTable = document.getElementById("display");
+addNew = function()
+{var newObj = {}
+    newObj['retailPrice'] = " ";
+    newObj['wholesalePrice'] = " ";
+    newObj['stock'] = " " ;
+    newObj['brand']="New Item" ;
+    newObj['generic']=" ";
+    val.push(newObj);
+    doMe(val.length-1);
+    displayAll("");
+}
+addSpecific = function(rp,wp,st,br,gn)
+{var newObj = {}
+    newObj['retailPrice'] = rp;
+    newObj['wholesalePrice'] = wp;
+    newObj['stock'] = st ;
+    newObj['brand']=br ;
+    newObj['generic']=gn;
+    val.push(newObj);
+    displayAll("");
+}
+displayAll=function(query)
+{dTable.innerHTML="";
+var s = "</td><td>";
+  var i=0;
+val.forEach(function(e){
+if ((((e.generic.toLowerCase()).search(query.toLowerCase()))>(-1))||(((e.brand.toLowerCase()).search(query.toLowerCase()))>(-1)))
+{
+  dTable.innerHTML = "<tr><td>"+e.brand+s+e.generic+s+e.retailPrice +s+e.wholesalePrice+s+e.stock+s+"<button value='"+i+"' onclick='doMe("+i+")' >Edit</buton> "+s+"</td></tr>"+ dTable.innerHTML;}
+i+=1;
+
+})
+
+dTable.innerHTML ="<tr><td>"+"<b>Brand Name</b>"+s+"<b>Generic Name</b>"+s+"<b>Retail Price</b>"+s+"<b>Wholesale Price</b>"+s+"<b>Stock</b>"+"</td></tr>"+dTable.innerHTML;
+
+}
+if (JSON.parse(localStorage.val)!=null)
+{
+
+val=JSON.parse(localStorage.val);
+}
+displayAll("");
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
