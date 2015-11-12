@@ -26,6 +26,15 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <style>
+  .search-link:focus {
+    background-color: red;
+  }
+
+  </style>
+
+
+
 </head>
 <body>
 
@@ -42,7 +51,7 @@
             <input class="u-full-width" value="" placeholder="Search Here (leave blank for all)" id="search">
       </div>
       <div class="one columns" style="margin-top: 2%">
-      <button onclick="kwery = search.value;displayAll(search.value);search.value=''">Search</button>
+      <a class="search-link"onclick="kwery = search.value;displayAll(search.value);search.value=''">Search</a>
     </div>
   </div>
         <h4><button onclick="addNew()">Add New</button>&nbsp;<button onclick="exports()">export</button> 

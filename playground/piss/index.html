@@ -27,24 +27,75 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <style>
+    .search-link {
+          display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box;
+    }
+
+      .search-link:active {
+        color: blue;
+        border: 1px solid rgb(200,200,252);
+
+    }
+
+
+
+
+
+  </style>
 </head>
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
- 
+
   <div class="container">
     <div class="row">
       <div class="ten columns" style="margin-top: 25%">
         <h4><b>P</b>harmacy <b>I</b>nventory <b>S</b>oftware <b>S</b>ystem <img src='images/pills.svg' style="position:relative;height:75px; padding: 1%; "> </h4>
         <p>for more fun web Apps visit <a href="http:\\www.tinyurl.com/ChanRoyce">Matthew's Web PlayGround</a></p>
- <div class="row">
-      <div class="ten columns" style="margin-top: 2%">
-            <input class="u-full-width" value="" placeholder="Search Here (leave blank for all)" id="search">
-      </div>
-      <div class="one columns" style="margin-top: 2%">
-      <button onclick="kwery = search.value;displayAll(search.value);search.value=''">Search</button>
-    </div >
+         <div class="row">
+            <div class="eight columns" style="margin-top: 2%">
+                  <input class="u-full-width" value="" style="height:30px" placeholder="Search Here (leave blank for all)" id="search"
+
+                  >
+            </div>
+          <div class="one columns" style="margin-top: 2%">
+           <a class="search-link" 
+
+      onclick="
+      console.log('searching for '+searchbar.value);
+            kwery = searchbar.value;
+            displayAll(searchbar.value);
+            if (searchbar.value != '')
+            {
+                        searchbar.placeholder='showing results for '+kwery;
+            }
+            else
+            {
+              searchbar.placeholder='Showing all values . . .'
+          }
+      searchbar.value=''
+
+      "
+      >Search</a>
+           </div >
   </div>
         <h4><button onclick="addNew()">Add New</button>&nbsp;<button onclick="exports()">export</button> 
           &nbsp;<button onclick="imports()">import</button>
@@ -55,9 +106,28 @@
 
 
         </table>
+  
       </div>
+      
+    <div  align=Center style="background-color:#eeeeee; left: 80%; height:23%; width:25% ; position: absolute; padding:2%;  margin-top:20%; ">
+        <h4 style="position:relative; margin-top:15%">Your Ad goes Here</h4>
+        <p> Contact us for details</p>
+<sub>Advertisment</sub>
+
+      </div>
+
+      <div  align=Center style="background-color:#eeeeee;  top: 50%; left: 80%; height:35%; width:25%; position: absolute; padding:2%; margin-top:10%%; ">
+        <h4 style="position:relative; margin-top:20%">Your Ad goes Here</h4><p> Contact us for details</p>
+        <sub>Advertisment</sub>
+
+      </div>
+
     </div>
+  
   </div>
+
+
+
 <div id="editBay" style="position:fixed; top:-100%; background-color: rgba(200,200,200,0.9); height:50%; left:30%; width:40%; padding:10%; transition: all 1s ease-in-out; border-radius:10px;">
   
       <label >Brand Name</label>
@@ -131,6 +201,7 @@ st = document.getElementById("st");
 rp = document.getElementById("rp");
 val = [ ]
 index = 0;
+
 imports = function()
 {
   importBay.style.left ="1%" 
@@ -258,6 +329,10 @@ addSpecific = function(rp,wp,st,br,gn)
 }
 displayAll=function(query)
 {dTable.innerHTML="";
+if (query == undefined)
+{
+  query="";
+}
 var s = "</td><td>";
   var i=0;
 val.forEach(function(e){
