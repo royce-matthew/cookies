@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="five columns" style="margin-top: 25%">
+       
+        <div id="dTable">
+        </div>
+      </div>
+<div class="six columns" style="margin-top: 25%">
+  <input id="search" placeholder="Type car/boat/red/green">
+       
+        <button onclick="kwery=search.value;odd(search.value); refresh(col.value);">search</button>
+
+        <label >Columns</label>
+      <select class="u-full-width" id="col" onclick= 'refresh(this.value);'>
+        <option onclick= 'refresh(this.value);' value=1>  1</option>
+        <option onclick= 'refresh(this.value);' value=2>2</option>
+        <option onclick= 'refresh(this.value);' selected value=3>3</option>
+        <option onclick= 'refresh(this.value);' value=4>4</option>
+      </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+dTable=document.getElementById("dTable");
+col=document.getElementById("col");
+search=document.getElementById("search");
+values = [];
+
+refresh=function(x){
+values.forEach(function(e){
+  if (e.position!=null){
+
+  e.fig.style.left =(e.position%x)*120+'px';
+  e.fig.style.top =200+((e.position-(e.position%x))/x)*40+'px';
+    e.fig.style.visibility="visible";
+
+    e.fig.style.opacity="1";
+
+  }
+  else
+  {
+    e.fig.style.top='200px';
+    e.fig.style.left='0px';
+    e.fig.style.visibility="hidden";
+    e.fig.style.opacity="0";
+  }
+})}
+
+initialize=function(){
+  i=0;  
+values.forEach(function(e){
+  e.fig.className="entry";
+  e.position=null;
+
+}
+)
+
+}
+
+
+
+addNew = function(name){
+var newObj = {};
+    newObj['name'] = name;
+    newObj['price'] = 200;
+    newObj['position'] = null;
+    newObj['fig'] = document.createElement("div");
+    dTable.appendChild(newObj.fig);
+    newObj.fig.innerHTML=newObj.name;
+    values.push(newObj);
+}
+
+odd=function(query){
+  i=0;
+
+values.forEach(function(e){
+        if (e.name.search(query)>-1)// official Conditional
+      {
+        e.position=i;
+         i+=1;
+      }
+      else
+      {
+        e.position=null;
+      }
+}
+)
+
+}
+addNew("red car");
+addNew("blue car");
+addNew("green boat");
+addNew("green car");
+addNew("blue boat");
+addNew("red boat");
+addNew("green tank");
+initialize();
+odd('');
+refresh(3);
+
+
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

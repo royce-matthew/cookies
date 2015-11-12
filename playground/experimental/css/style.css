@@ -1,0 +1,16 @@
+.entry
+{
+
+transition: all 1s ease-in-out;
+ border-radius:5px;
+ border: solid 1px;
+text-align: center;
+ margin:2px;
+ width:100px;
+ top:200px;
+ left:0px;
+ position:absolute;
+ visibility:'hidden';
+ opacity: 0;
+
+}
