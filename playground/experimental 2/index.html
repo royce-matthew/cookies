@@ -75,6 +75,7 @@ values.forEach(function(e){
   }
   else
   {
+    e.fig.style.top="-100%";
     e.fig.style.visibility="hidden";
     e.fig.style.opacity="0";
   }
@@ -127,7 +128,10 @@ addNew("green boat");
 addNew("green car");
 addNew("blue boat");
 addNew("red boat");
-addNew("green tank");
+
+addNew("pink boat");
+addNew("purple boat");
+addNew("purple tank");
 initialize();
 odd('');
 refresh(3);
