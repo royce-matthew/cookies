@@ -22,10 +22,11 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <style>
-  .imageses :hover{
+  .imageses :hover {
 
-    height:200px;
-    width:200px;
+    border: solid 3px;
+    border-color: #fff;
+
   }
 
 .send-button {
@@ -43,11 +44,13 @@
   font-weight: bold;
   transition: ease-in-out 0.2s;
   border: none; 
+
 height:55px;
 }
 
 
 .modal{
+
   top:-100%;
   left:calc( 50% - 250px);
   position: fixed;
@@ -98,13 +101,19 @@ background-color: white;
 
 <hr style="margin-top: 10px">  
 <center> 
-<div style="background-color: #9cc1fc; height:500px; width:1--%; ">
-  &nbsp;
-</div>  
+<img style=" height:500px; width:100%; " src="images/portrait.jpg">
+  
 
 </center> 
 
   <p>
+    <br>
+    <hr>
+    <br>
+    <center>
+    <button onclick="talk('<h4>Question: </h4><h5>What is Psychology?</h5>','<h4>Answer:</h4><h6>It is the scientific study of behavior and mental processes</h6>')">What is Psychology ?</button>
+    </center>
+    <br>
     <br>
 <hr>
 <br>
@@ -173,20 +182,20 @@ background-color: white;
 <div class="row">
 <div class="one column"></div>
 
-<div class="two columns"> <center><img class="imageses" style="width:90px; height:90px; padding:0px;  " src="images/titchner.png" onclick="talk('Structuralism','Structuralism was asdfghgnjjcs TITSCHENER')">
-   <h5>Titchner</h5></center></div>
+<div class="two columns"> <center> <a class="imageses"> <img class="imageses" style="width:90px; height:90px; padding:0px;  " src="images/titchner.png" onclick="talk('Structuralism','Structuralism was asdfghgnjjcs TITSCHENER')">
+  </a> <h5>Titchner</h5></center></div>
 
-<div class="two columns"> <center><img class="imageses" style="width:90px; height:90px; padding:0px; " src="images/james.png" onclick="talk('Functionalism','ksacmakcek efmew ewnkw jrnvj dsck was asdfghgnjjcs james')">
+<div class="two columns"> <center> <a class="imageses"> <img style="width:90px; height:90px; padding:0px; " src="images/james.png" onclick="talk('Functionalism','ksacmakcek efmew ewnkw jrnvj dsck was asdfghgnjjcs james')"> </a>
    <h5>James</h5></center></div>
 
-<div class="two columns"> <center><img class="imageses" style="width:90px; height:90px; padding:0px;  " src="images/wertheimer.png">
+<div class="two columns"> <center> <a class="imageses"> <img style="width:90px; height:90px; padding:0px;  " src="images/wertheimer.png"> </a>
    <h5>Wertheimer</h5></center></div>
 
-<div class="two columns"> <center><img class="imageses" style="width:90px; height:90px; padding:0px; " src="images/freud.png">
-   <h5>Freud</h5></center></div>     
+<div class="two columns"> <center><a class="imageses"><img style="width:90px; height:90px; padding:0px; " src="images/freud.png">
+   </a><h5>Freud</h5></center></div>     
   
-<div class="two columns"> <center><img class="imageses" style="width:90px; height:90px; padding:0px;  " src="images/watson.png">
-   <h5>Watson</h5></center></div>
+<div class="two columns"> <center><a class="imageses"><img style="width:90px; height:90px; padding:0px;  " src="images/watson.png">
+   </a><h5>Watson</h5></center></div>
 
 </div>
 </center>
@@ -194,14 +203,32 @@ background-color: white;
 <hr>
 <br>
 <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Hammock blog meggings affogato, farm-to-table schlitz church-key waistcoat fingerstache try-hard green juice celiac. Squid 90's wolf portland readymade, viral semiotics kitsch pickled microdosing umami PBR bespoke. Sriracha chartreuse chicharrones kombucha banjo twee, poutine authentic direct trade lo-fi waistcoat. Heirloom mixtape distillery, helvetica biodiesel godard four loko kickstarter. Seitan tofu celiac tilde intelligentsia vice cornhole shabby chic, plaid ennui art party organic sartorial farm-to-table disrupt. Tumblr drinking vinegar listicle seitan, ennui pug lo-fi hella ethical cliche banjo. Paleo ennui bespoke sartorial.
-  </p>
-  <p>
-    <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Pour-over bespoke ramps, listicle truffaut forage distillery lumbersexual skateboard narwhal schlitz. Selvage pabst hella put a bird on it letterpress, cardigan +1 next level bicycle rights kinfolk forage 90's irony. Quinoa normcore farm-to-table lo-fi, skateboard mixtape bespoke banh mi swag PBRB organic selvage polaroid. Sriracha drinking vinegar gastropub, meh leggings authentic next level direct trade. Normcore blog chambray pug organic. Gluten-free direct trade tattooed brunch plaid. Chia church-key post-ironic street art kickstarter seitan.
-<br>
-<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Hammock blog meggings affogato, farm-to-table schlitz church-key waistcoat fingerstache try-hard green juice celiac. Squid 90's wolf portland readymade, viral semiotics kitsch pickled microdosing umami PBR bespoke. Sriracha chartreuse chicharrones kombucha banjo twee, poutine authentic direct trade lo-fi waistcoat. Heirloom mixtape distillery, helvetica biodiesel godard four loko kickstarter. Seitan tofu celiac tilde intelligentsia vice cornhole shabby chic, plaid ennui art party organic sartorial farm-to-table disrupt. Tumblr drinking vinegar listicle seitan, ennui pug lo-fi hella ethical cliche banjo. Paleo ennui bespoke sartorial.
+
+<pre>
+
+<code>
+Areas of profession:
+  psychologist
+  psychiatrist
+  psychiatric social worker
+
+Scientific methodology
+  perceiving the question
+  forming the hypothesis
+  testing the hypothesis
+  drawing conclusions
+  reporting your results
+  Finding Relationships
+  correlation
+  experiments
+  Critical thinking
+  four basic criteria
+
+</code>
+</pre>
+
+
+
   </p>
 
   </div>
