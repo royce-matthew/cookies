@@ -60,6 +60,7 @@ color:white; top:275px; position:relative; margin:0px 40px; font-size:32px;
 {
 
     background: url(../images/portrait.jpg);
+    background-position: -95px 10px;
      background-size: cover;
     height: 225px;
     position: absolute;
