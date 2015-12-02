@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Royce Matthew's PlayGround</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link rel="stylesheet" href="css/skeleton.css">
+
+<style>
+
+
+</style>
+<script src="js/jquery.js"></script>
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+    <div class="row">
+      <div class="one-half column What is Psychology?" style="margin-top: 35%">
+      <h3>Chapter 1</h3>  
+  <a href='#hllo' class="navbar-link smoothScroll">Home</a>
+      <a href="#hllo" class="smoothScroll">Hello</a>
+      </div>
+    </div>
+  </div>
+  
+  <div  id="hllo" style="position:absolute; top:300%; height:100%; width:100%; background:azure;">
+Hello
+  </div>
+
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+
+<script>
+$(window).scroll(
+function()
+{
+  if($(this).scrollTop()>580)
+  {
+    $(".navi").addClass("fix");
+
+
+  }
+  else
+  {
+    $(".navi").removeClass("fix");
+  }
+
+console.log($(this).scrollTop());
+
+
+}
+
+
+  );
+
+document.addEventListener("keydown",function(){
+
+
+$(window).scrollY+=20;
+
+
+});
+play = document.getElementById("play");
+play.addEventListener("click",function(){});
+</script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
+
