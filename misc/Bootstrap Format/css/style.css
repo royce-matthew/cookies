@@ -18,3 +18,74 @@ height:45px;
     
     background-color: #A02A26;
 }
+button :focus
+{
+	border:solid 1px;
+
+}
+.glassbox:focus
+{
+	background-color: rgba(90,10,10,0.7); height:360px; width:360px;
+}
+.glassbox:hover
+{
+	background-color: rgba(10,10,10,0.7); height:360px; width:360px;
+}
+
+.glassbox
+{
+	background-color: rgba(20,20,20,0.5); height:360px; width:360px;
+}
+.sampleBox
+{
+	 background:url(../images/sample1.png); height:360px; width:360px; margin:20px 20px 20px 20px;
+	      background-size: cover;
+	 padding:0px;
+     background-size: cover;
+}
+.description
+{
+color:white; top:275px; position:relative; margin:0px 40px; font-size:32px;
+
+}
+.banner{
+	background: url(../images/banner.jpg); height:340px; top:0px; position: absolute; width: 100%;
+ background-size: cover;
+  background-position: calc(10%) calc(40%)
+}
+.h1name{
+	position:absolute;  top:489px; text-align:center; font-size:30px; width:100%; margin:0px;
+}
+.displayPicture
+{
+
+    background: url(../images/portrait.jpg);
+     background-size: cover;
+    height: 225px;
+    position: absolute;
+    width: 225px;
+    top: 225px;
+    padding: 10px 10px 10px 25px;
+    left: calc(50% - 112px);
+    border-radius: 112.5px;
+    z-index:20;
+}
+.eventTitle
+{
+	margin:0px; position:relative; top:0px; left:0px; font-size:15px; text-align:left;
+}
+.sixtyBySixty{border: solid 1px; width: 60px; height:60px; margin: 0px 0px; position:relative; top:0px; left:0px; text-align:left;}
+
+.entry
+{
+
+width: 300px; height:60px; margin: 5px 40px;
+}
+.details
+{
+margin:0px; position:relative; top:0px; left:0px; font-size:15px;"
+}
+.smallFont{
+
+	margin:0px; position:relative; top:0px; left:0px; font-size:12px; padding:0px; color:#6e6e6e
+}
