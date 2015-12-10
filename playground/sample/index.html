@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Random Shit </title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <center>
+  <div class="box2" id="projectBox"></div>
+  <div class="description-box" id="display" >
+<h2 id="projectName">Projects</h2>
+<p id="projectDescription">
+<img width='100px' height="100px" style="border:solid 0px; visibility:hidden;">
+</p>
+
+<button onclick="select(''); refresh(); select('a'); refresh(); kwery.placeholder=''">a</button>
+<button onclick="select(''); refresh(); select('b'); refresh(); kwery.placeholder=''">b</button>
+<button onclick="select(''); refresh(); select('c'); refresh(); kwery.placeholder=''">c</button>
+  </div>
+
+
+
+</center>
+
+<script>
+size=100;
+projects=[]
+display=document.getElementById("display")
+kwery=document.getElementById("kwery");
+projectBox= document.getElementById("projectBox");
+projectName=document.getElementById("projectName");
+projectDescription=document.getElementById("projectDescription");
+index=0;
+create = function(name,color,image)
+{
+
+var newObj = {'name':name};
+    newObj['index'] = index;
+    index=index+1;
+    newObj['color']=color;
+     newObj['image']=image;
+    newObj['position'] = null;
+    newObj['fig'] = document.createElement("div");
+
+    projectBox.appendChild(newObj.fig);
+
+    newObj.fig.addEventListener("click", function(){
+
+
+
+   projects.forEach(function(e){
+    if (newObj.index == e.index)
+    {
+      display.style.background=e.color;
+     projectName.innerHTML=e.name;
+     projectDescription.innerHTML="<img width='100px' height='100px' src="+e.image+">"
+    }
+
+  })
+
+
+
+    }  );
+  newObj.fig.className="boxHide"
+  newObj.fig.style.background=color;
+    newObj.fig.innerHTML=newObj.name;
+    newObj.fig.innerHTML+="<br><a class='thumb'><img width='60px' height='60px' src="+newObj.image+"></a>"
+    projects.push(newObj);
+
+}
+select=function(query){
+  var i=0;
+  projects.forEach(function(e){
+    if (e.name.toLowerCase().search(query.toLowerCase())> -1)
+  { e.position = i;
+    i+=1;
+  }
+  else
+  {
+    e.position=null;
+  }
+  }
+  )
+  console.log(projects);
+}
+
+refresh=function(){
+projects.forEach(function(e)
+{
+  if(e.position != null)
+  { 
+    
+        e.fig.style.top=((e.position - (e.position %4))/4)*size+"px";
+        e.fig.style.left=(e.position%4)*size+"px";
+        e.fig.style.visibility="visible"
+        e.fig.style.opacity="1"
+
+
+  }
+  else
+  {
+    e.fig.className="boxHide";
+    e.fig.style.opacity="0";
+    e.fig.style.visibility="hidden";
+  }
+
+}
+)
+
+}
+randomimage=function()
+{
+
+return  "images/png/"+(Math.floor(26*Math.random())+1)+".png"
+}
+randomcolor=function()
+{
+  br=200;
+  dk=10;
+  bluetint=0;
+  redtint=0;
+  greentint=0
+r=br+((256-br)*(Math.random()));
+r-=((Math.random())*dk)
+g=br+((256-br)*(Math.random()));
+g-=((Math.random())*dk)
+b=br+((256-br)*(Math.random()));
+b-=((Math.random())*dk)
+return "rgba("+Math.floor(r)+","+Math.floor(g)+","+Math.floor(b)+",0.91)";
+
+
+}
+
+create("a",randomcolor(),randomimage());
+
+create("aba",randomcolor(),randomimage());
+
+create("aca",randomcolor(),randomimage());
+
+create("cab",randomcolor(),randomimage());
+
+
+create("cca",randomcolor(),randomimage());
+
+create("cac",randomcolor(),randomimage());
+
+create("baa",randomcolor(),randomimage());
+
+create("aab",randomcolor(),randomimage());
+
+
+create("bca",randomcolor(),randomimage());
+
+create("cba",randomcolor(),randomimage());
+
+create("bbb",randomcolor(),randomimage());
+
+create("ccc",randomcolor(),randomimage());
+
+select("");
+refresh();
+
+
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

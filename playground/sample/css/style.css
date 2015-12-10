@@ -1,0 +1,51 @@
+.box
+{
+border:solid 1px;
+width:100px;
+height:100px;
+
+
+}
+.boxHide
+{padding: 5px;
+width:90px;
+height:90px;
+position:inherit;
+visibility: hidden;
+transition: cubic-bezier(.12,.4,.48,1) 0.76s;
+
+cursor:pointer;
+
+}
+.thumb :hover
+{
+	width:65px;
+height:65px;
+cursor: pointer;
+
+}
+.description-box
+{
+	margin-top:30px;
+	padding:10px;
+	height:280px;
+width:380px;
+overflow: scroll;
+
+  -webkit-transition: background-color 0.8s ease-out;
+  -moz-transition: background-color 0.8s ease-out;
+  -o-transition: background-color 0.8s ease-out;
+  transition: background-color 0.8s ease-out;
+  background-color: rgba(225, 230, 237, 0.909804);
+}
+.box2
+{
+	margin:10px;
+	position:absolute;
+	top:330px;
+	left: calc(50% - 210px);
+width:400px;
+min-height:500px;
+overflow: scroll;
+
+}
