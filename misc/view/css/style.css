@@ -200,3 +200,38 @@ margin:10px 0px 0px 0px; background: url(images/map.png);
 top:140px; height: 560px; width:1135px;  margin:10px 0px 5px 75px
 
 }
+
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+    vertical-align: center;
+    margin-top: 20px;
+
+text-align:center;
+    display:block;margin-left:auto;margin-right:auto;
+}
+.item .thumb {
+
+text-align:center;
+    display:block;
+    cursor: pointer;
+    float: left;
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+    margin: 10px;
+}
+.item .thumb img {
+
+  min-height: 100%;
+  min-width: 100%;
+
+    width:100px;
+    height:100px;
+    margin: 2px;
+}
+.item img {
+    width: 100%;    
+}
+

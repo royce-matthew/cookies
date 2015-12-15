@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
@@ -41,20 +42,64 @@
 		<div id="main-display" style="background-color:white; height:500px; width:500px; background:url(images/1.jpg); background-size: cover;">
 
 		</div>
-
+<!--
 		<div class="row" id="pick" style=" ">
 		
-			<!--For this selector Part, Check Function Make() I dont know how you guys are gonna do it,
+		For this selector Part, Check Function Make() I dont know how you guys are gonna do it,
 			 but I made a Javascript Function make() with parameters image1-image6 which are supposed 
 			 to be paths for whatever images you want and adds the functionality of function game() to display the image
 				here, I used 
 
 					make("images/1.jpg","images/2.jpg","images/4.jpg");
 
-			   -->
+			   
 	
 		</div>
-	
+	-->
+<div style="width:360px; position:absolute; left:210px;">
+ <div class="clearfix">
+        <div id="thumbcarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+
+                	
+                <div class="item active" style="
+text-align:center;" >
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/1.jpg" onclick="game('images/1.jpg')"></div>
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/2.jpg" onclick="game('images/2.jpg')"></div>
+
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/3.jpg" onclick="game('images/3.jpg')"></div>
+
+                
+                </div>
+            <!-- /item -->
+                <div class="item">
+                    
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/sample4.png" onclick="game('images/sample4.png')"></div>
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/sample5.png" onclick="game('images/sample5.png')"></div>
+
+
+                    <div data-target="#carousel" class="center thumb"><img src="images/sample6.png" onclick="game('images/sample6.png')"></div>
+
+                </div><!-- /item -->
+
+
+            </div><!-- /carousel-inner -->
+
+            <a class="left " href="#thumbcarousel" role="button" data-slide="prev">
+                Prev
+            </a>
+            |
+            <a class="right " href="#thumbcarousel" role="button" data-slide="next">
+                Next
+            </a>
+        </div> <!-- /thumbcarousel -->
+    </div><!-- /clearfix -->
+ </div>
 
 	</div>
 
@@ -207,7 +252,11 @@ pick.innerHTML += "<div class='col-sm-"+columns+"' style='background:url("+path+
 }
 
 make("images/1.jpg","images/2.jpg","images/4.jpg");
-
+$(document).ready(function() {
+    $('#myCarousel').carousel({
+	    interval: 10000
+	})
+});
 </script>
 </body>
 </html>
