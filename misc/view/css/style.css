@@ -17,6 +17,18 @@ height:45px;
     
     background-color: #A02A26;
 }
+.jb
+{
+    padding:15px;
+    background-color:#A02A26; height:60px; width:170px; float:right; margin-top:40px; border-radius:40px; border:none; color:white; font-size:20px; font-family:'Roboto' !important;
+}
+.jb:hover
+{
+    color:white;
+
+cursor: pointer;
+ background-color:#B02B26;
+}
 button :focus
 {
 	border:solid 1px;
@@ -28,6 +40,8 @@ button :focus
 }
 .glassbox:hover
 {
+
+cursor: pointer;
 	background-color: rgba(10,10,10,0.7); height:360px; width:360px;
 }
 
@@ -59,6 +73,24 @@ color:white; top:275px; position:relative; margin:0px 40px; font-size:32px;
     font-weight: 900;
 	position:absolute;  top:489px; text-align:center; font-size:30px; width:100%; margin:0px;
 }
+#pick
+{
+    background:transparent; position:relative; padding:0px; height:100px; width:500px; margin-top:25px;
+}
+.rob
+{
+
+    font-family: 'Roboto' !important;
+    font-style: normal;
+}
+
+.rob-b
+{
+
+    font-family: 'Roboto' !important;
+    font-style: bold;
+}
+
 .sub{
 
     font-family: 'Roboto' !important;
@@ -78,6 +110,22 @@ color:white; top:275px; position:relative; margin:0px 40px; font-size:32px;
     left: calc(50% - 112px);
     border-radius: 112.5px;
     z-index:20;
+}
+.magic
+{
+position:absolute;
+background-color: rgba(0,0,0,0);
+height:100%;
+width:100%;
+
+cursor: pointer;
+transition: background-color ease-out 0.42s;
+}
+.magic:hover
+{
+    
+cursor: pointer;
+ background-color: rgba(0,0,0,0.4);   
 }
 .eventTitle
 {
@@ -101,4 +149,17 @@ margin:0px; position:relative; top:0px; left:0px; font-size:15px;"
 .smallFont{
 
 	margin:0px; position:relative; top:0px; left:0px; font-size:12px; padding:0px; color:#6e6e6e
+}
+.maps{
+margin:10px 0px 0px 0px; background: url(images/map.png); 
+     background-size: cover;
+}
+.mapbar{
+     left:10px; height: 560px; width:375px; margin:10px 0px 0px 0px ;
+    background-color: #A02A26;
+}
+.map-big
+{
+top:140px; height: 560px; width:1135px;  margin:10px 0px 5px 75px
+
 }

@@ -34,38 +34,60 @@
 </div>
 
 
-<div class="row" style="  min-height: 760px; max-width:1125px; border:solid 1px; margin:140px 0px 5px 75px; background-color:#191919; padding:60px;">
+<div class="row" style="  min-height: 760px; width:1125px; border:solid 1px; margin:140px 0px 5px 75px; background-color:#191919; padding:60px;">
 
-<div class="col-sm-6">
+	<div style="width:500;">
 
-	<div id="main-display" style="background-color:white; height:500px; width:500px; background:url(images/1.jpg); background-size: cover;"></div>
+		<div id="main-display" style="background-color:white; height:500px; width:500px; background:url(images/1.jpg); background-size: cover;">
 
-	<div class="row" style="background:transparent; position:relative; left: calc(50% - 177px); height:100px; width:355px; margin-top:25px; ">
+		</div>
 
+		<div class="row" id="pick" style=" ">
+		
+			<!--For this selector Part, Check Function Make() I dont know how you guys are gonna do it,
+			 but I made a Javascript Function make() with parameters image1-image6 which are supposed 
+			 to be paths for whatever images you want and adds the functionality of function game() to display the image
+				here, I used 
 
+					make("images/1.jpg","images/2.jpg","images/4.jpg");
 
-
-		<div class="col-sm-3" style="background:url(images/1.jpg); background-size: cover;  position:relative; left: calc(50% - 177px); height:100px; width:100px; margin-left:13px;" onclick="game(1)"></div>
-
-		<div class="col-sm-3" style="background:url(images/2.jpg); background-size: cover; position:relative; left: calc(50% - 177px); height:100px; width:100px; margin-left:13px;" onclick="game(2)"></div>
-
-		<div class="col-sm-3" style="background:url(images/3.jpg); background-size: cover; position:relative; left: calc(50% - 177px); height:100px; width:100px; margin-left:13px; margin-right:13px;" onclick="game(3)"></div>
-
-
-	</div>
+			   -->
+	
+		</div>
 	
 
 	</div>
 
-</div>
-<div class="row" style=" top:140px; height: 560px; width:1135px;  margin:10px 0px 5px 75px">
+	<div  style="padding:40px; position:absolute; top:200px; left:630px;">
+		<h1 class="rob-b" style="color:rgb(220,220,220); margin:0px; font-size:40px;">She's Only Sixteen</h1>
+		<div class="rob" style="color:rgb(180,180,180); width:470px; font-weight:300; font-size:20px; margin-top:16px;">
+			October 26
+		</div>
+	<div class="rob" style="color:rgb(180,180,180); width:470px;  margin-top:16px;   font-family: 'Roboto' !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size:20px;">
+			Makati City
+		</div>
 
-<div class="col-md-8" style=" height: 560px; width:740px;  margin:10px 0px 0px 0px; background: url(images/map.png); 
-     background-size: cover;">
+		<div class="rob" style="color:rgb(180,180,180); max-width:470px; font-weight:100; font-size:20px; margin-top:16px;">
+			Lorem Impsum asdf doasv iveni rinvi nerivni irenvnveri irevni nnre nir vn omc omsoc smcdo dkv vmef v freb r rt  erb trb trbtbrt brb rt rtbrtbrtb rtbtrbrt rtbrtb rtbrtb btrtb rtbrt rtbrtbrt rtbrtbrt rtbrtbrt rtbrtbt rtbrtbrt rtbrtbrt 
+
+		</div>
+		<a class="jb" style=""><center>Join</center></a>
+
+	</div>
+
+
+</div>
+<div class="row map-big" style=" ">
+
+<div class="col-md-8 map" style="
+    height: 560px; width:740px;  margin:10px 0px 0px 0px; background: url(images/map.png); 
+     background-size: cover; ">
 </div>
 
-<div class="col-md-4" style="  left:10px; height: 560px; width:375px; margin:10px 0px 0px 0px ;
-    background-color: #A02A26;">
+<div class="col-md-4 mapbar" style=" ">
 </div>
 
 </div>
@@ -82,14 +104,42 @@
 	
 	
 <script>
+pick=document.getElementById('pick');
 main=document.getElementById("main-display");
 game = function(i)
 {
-	console.log(main.style);
-main.style.background="url(images/"+i+".jpg)";
+main.style.background="url("+i+")";
 main.style.backgroundSize="cover";
-
+console.log(i);
 }
+make = function(image1,image2,image3,image4,image5,image6)
+{
+	images=[];
+	if (image1!=null)
+	{images.push(image1);}
+	if (image2!=null)
+	{images.push(image2);}
+	if (image3!=null)
+	{images.push(image3);}
+	if (image4!=null)
+	{images.push(image4);}
+	if (image5!=null)
+	{images.push(image5);}
+	if (image6!=null)
+	{images.push(image6);}
+	
+	
+	columns=12/images.length;
+	columns=parseInt(columns);
+console.log(images);
+	images.forEach(function(path){
+		pathe="\""+path+"\""
+pick.innerHTML += "<div class='col-sm-"+columns+"' style='background:url("+path+"); background-size: cover;  position:relative; height:100px; max-width:100px; margin-left:13px; padding:0px;' onclick='game("+pathe+")'><a class='magic'></a></div> ";
+
+	});
+}
+
+make("images/1.jpg","images/2.jpg","images/4.jpg");
 
 </script>
 </body>
