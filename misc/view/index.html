@@ -8,8 +8,201 @@
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
 	<link href="css/animate.css" rel="stylesheet">
+	<style>
+	.bubble 
+{
+position: relative;
+width: 115px;
+height: 30px;
+padding-top: 7px;
+margin-top: 50px;
+background: #FFFFFF;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px 0px;
+border-radius: 15px 15px 15px 0px;
+}
+.circle{
+    background: url(../images/portrait.jpg);
+     background-size: cover;
+    height:60px; width:60px; border-radius:30px; margin:0px;
+}
+.people
+{
+    color:white;
+    position:inherit; margin: 20px 0px 0px 0px;
+}
+.bubble:after 
+{
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 12px 7px 0 0;
+border-color: #ffffff transparent transparent transparent;
+
+content: '';
+position: absolute;
+border-style: solid;
+z-index: 1;
+bottom: -10px;
+left: 0px;
+}
+.navSearch
+{
+border-radius:23px;
+border:solid 1px white;
+background-color: #101010;
+padding:1px 1px 1px 20px;
+font-size: 10pt;
+width:220px;
+height:45px;
+}
+.footer
+{
+    width: 100%;
+    height: 60px;
+    padding:15px 10px 0px 30px;
+    
+    background-color: #A02A26;
+}
+.jb
+{
+    padding:15px;
+    background-color:#A02A26; height:60px; width:170px; float:right; margin-top:40px; border-radius:40px; border:none; color:white; font-size:20px; font-family:'Roboto' !important;
+}
+.jb:hover
+{
+    color:white;
+
+cursor: pointer;
+ background-color:#B02B26;
+}#pick
+{
+    background:transparent; position:relative; padding:0px; height:100px; width:500px; margin-top:25px;
+}
+.rob
+{
+
+    font-family: 'Roboto' !important;
+    font-style: normal;
+}
+
+.rob-b
+{
+
+    font-family: 'Roboto' !important;
+    font-style: bold;
+}
+.selection{width:360px; position:absolute; left:210px;}
+.sub{
+
+    font-family: 'Roboto' !important;
+    font-style: normal;
+    position:absolute;  top:539px; text-align:center; font-size:14px; width:100%; margin:0px; color:#7d7d7d;
+}
+.displayPicture
+{
+
+    background: url(../images/portrait.jpg);
+     background-size: cover;
+    height: 225px;
+    position: absolute;
+    width: 225px;
+    top: 225px;
+    padding: 10px 10px 10px 25px;
+    left: calc(50% - 112px);
+    border-radius: 112.5px;
+    z-index:20;
+}
+.magic
+{
+position:absolute;
+background-color: rgba(0,0,0,0);
+height:100%;
+width:100%;
+
+cursor: pointer;
+transition: background-color ease-out 0.42s;
+}
+.magic:hover
+{
+    
+cursor: pointer;
+ background-color: rgba(0,0,0,0.4);   
+}
+.eventTitle
+{
+    
+    font-family: 'Roboto' !important;
+	margin:0px; position:relative; top:0px; left:0px; font-size:15px; text-align:left;
+}
+.sixtyBySixty{border: solid 1px; width: 60px; height:60px; margin: 0px 0px; position:relative; top:0px; left:0px; text-align:left;}
+
+.entry
+{
+
+width: 300px; height:60px; margin: 5px 40px;
+}
+.details
+{
+
+    font-family: 'Roboto' !important;
+margin:0px; position:relative; top:0px; left:0px; font-size:15px;"
+}
+.smallFont{
+
+	margin:0px; position:relative; top:0px; left:0px; font-size:12px; padding:0px; color:#6e6e6e
+}
+.maps{
+margin:10px 0px 0px 0px; padding: 0px; background: url(images/map.png); 
+}
+.mapbar{
+    overflow: scroll;
+     left:10px; height: 560px; width:375px; margin:10px 0px 0px 0px ;
+    background-color: #A02A26;
+}
+.map-big
+{
+top:140px; height: 560px; width:1135px;  margin:10px 0px 5px 75px
+
+}
+
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+    vertical-align: center;
+    margin-top: 20px;
+
+text-align:center;
+    display:block;margin-left:auto;margin-right:auto;
+}
+.item .thumb {
+
+text-align:center;
+    display:block;
+    cursor: pointer;
+    float: left;
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+    margin: 10px;
+}
+.item .thumb img {
+
+  min-height: 100%;
+  min-width: 100%;
+
+    width:100px;
+    height:100px;
+    margin: 2px;
+}
+.item img {
+    width: 100%;    
+}
+
+
+	</style>
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.easing.min.js"></script>
@@ -56,14 +249,13 @@
 	
 		</div>
 	-->
-<div style="width:360px; position:absolute; left:210px;">
+<div class="selection">
  <div class="clearfix">
         <div id="thumbcarousel" class="carousel slide" data-interval="false">
             <div class="carousel-inner">
 
                 	
-                <div class="item active" style="
-text-align:center;" >
+                <div class="item active" style="text-align:center;" >
 
                     <div data-target="#carousel" class="center thumb"><img src="images/1.jpg" onclick="game('images/1.jpg')"></div>
 
@@ -128,8 +320,10 @@ text-align:center;" >
 <div class="row map-big" style=" ">
 
 <div class="col-md-8 map" style="
-    height: 560px; width:740px;  margin:10px 0px 0px 0px; background: url(images/map.png); 
-     background-size: cover; ">
+    height: 560px; width:740px;  margin:10px 0px 0px 0px; background: azure; 
+     background-size: cover; padding:0px;">
+
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1901.8021979188322!2d120.38682350089537!3d17.574011847246368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1450207077062" width="740" height="560" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 
 <div class="col-md-4 mapbar" style=" ">

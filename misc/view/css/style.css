@@ -187,8 +187,7 @@ margin:0px; position:relative; top:0px; left:0px; font-size:15px;"
 	margin:0px; position:relative; top:0px; left:0px; font-size:12px; padding:0px; color:#6e6e6e
 }
 .maps{
-margin:10px 0px 0px 0px; background: url(images/map.png); 
-     background-size: cover;
+margin:10px 0px 0px 0px; padding: 0px; background: url(images/map.png); 
 }
 .mapbar{
     overflow: scroll;
