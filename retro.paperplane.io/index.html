@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<style>
+input:focus {
+    outline:none;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+</style>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<style>
+.menu-item{font-size:14pt; color:white; text-decoration:none;}
+.menu-item:hover{font-size:16pt; }
+</style>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<img src="images/bg.png" style="width:calc(100% + 60px);height:calc(100% + 60px); top:-30px; left:-30px; position:absolute; -webkit-filter:blur(15px); ">
+
+<div style="position:absolute; top: calc(50% - 250px); left: calc(50% - 300px);  height:480px; width:580px; background:rgba(10,10,10,0.6); border-radius:10px; padding:10px;">
+<center>
+  <h2 style="color:rgba(220,220,220,0.99); margin-top:30px;">
+POS HangMan
+</h2>
+
+<a style="color:rgba(220,220,220,0.99);" href="http://www.royce.paperplane.io">royce.paperplane.io</a>
+  <p id="display" style="color:rgba(220,220,220,0.99); margin-top:30px;">
+
+Details
+</p>
+  <h2 id="display2" style="color:rgba(220,220,220,0.99); margin-top:30px;">
+
+Details
+</h2>
+
+  <div >
+
+      <input id="in" style="width:90px; font-size:60px; background:transparent; color:white; padding:10px;  border-top:transparent; border-left:transparent; border-right:transparent; text-align:center;" placeholder=" ">
+
+
+  </div>
+
+  <br>
+  <button onclick="save();">Submit</button>
+
+</center>
+</div>
+
+
+
+<script>
+display=document.getElementById("display");
+display2=document.getElementById("display2");
+inz=document.getElementById("in");
+win=false;
+word = ["c","a","r","a","m","e","l"];
+usedletters=[];
+display2.innerHTML="";
+i=0;
+wrong = 0;
+save=function()
+{
+  usedletters.push(inz.value);
+if (!(word.indexOf(inz.value)>-1))
+{
+wrong++;
+}
+  usedletters.sort();
+  inz.value="";
+  refresh();
+
+
+
+};
+refresh=function(){
+  i=0;
+  display2.innerHTML="";
+  word.forEach(function(f){
+if (usedletters.indexOf(f)>-1)
+{
+  display2.innerHTML+=(" "+f);
+console.log("true");
+
+}
+else
+{display2.innerHTML+=(" _");
+console.log(f);
+i++;
+}
+console.log(usedletters);
+  });
+  display.innerHTML="Used Letters : ";
+  usedletters.forEach(function(k){
+
+  display.innerHTML+=(" "+k);
+
+  })
+    display.innerHTML+="<br> Wrong Answers:  "+wrong;
+  console.log(wrong+" wrong")
+  if (i<=0)
+  {
+    win=true;
+  }
+  else
+  {
+    win=false; 
+  }
+  if (win)
+    {display.innerHTML="You Win"}
+}
+inz.addEventListener("keypress",function(e){
+console.log(e.charCode);
+if (e.charCode==13)
+  {save();
+}
+})
+
+refresh();
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
