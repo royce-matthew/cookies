@@ -52,17 +52,19 @@ input:focus {
 </head>
 <img src="images/bg.png" style="width:calc(100% + 60px);height:calc(100% + 60px); top:-30px; left:-30px; position:absolute; -webkit-filter:blur(15px); ">
 
-<div style="position:absolute; top: calc(50% - 250px); left: calc(50% - 300px);  height:480px; width:580px; background:rgba(10,10,10,0.6); border-radius:10px; padding:10px;">
+<div style="position:absolute; top: calc(50% - 250px); left: calc(50% - 450px);  height:480px; width:980px; background:rgba(10,10,10,0.6); border-radius:10px; padding:10px;">
 <center>
   <h2 style="color:rgba(220,220,220,0.99); margin-top:30px;">
 POS HangMan
 </h2>
 
-<a style="color:rgba(220,220,220,0.99);" href="http://www.royce.paperplane.io">royce.paperplane.io</a>
+<p style="color:rgba(220,220,220,0.99);" id="details2">Available Letters: </p>
   <p id="display" style="color:rgba(220,220,220,0.99); margin-top:30px;">
 
 Details
 </p>
+<img src="images/base.png" style="position:absolute; left:700px;" id="img">
+
   <h2 id="display2" style="color:rgba(220,220,220,0.99); margin-top:30px;">
 
 Details
@@ -85,18 +87,37 @@ Details
 
 <script>
 display=document.getElementById("display");
+details2=document.getElementById("details2");
 display2=document.getElementById("display2");
 inz=document.getElementById("in");
+img=document.getElementById("img");
 win=false;
-word = ["c","a","r","a","m","e","l"];
+letters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+nx = "alexis";
+word=[];
+count=0;
+while(count<nx.length)
+{
+	console.log(nx[count]);
+	word.push(nx[count]);
+	count++;
+}
+
 usedletters=[];
 display2.innerHTML="";
 i=0;
 wrong = 0;
 save=function()
 {
-  usedletters.push(inz.value);
-if (!(word.indexOf(inz.value)>-1))
+  usedletters.push(inz.value.toLowerCase());
+  index = letters.indexOf(inz.value.toLowerCase());
+  if (index > -1)
+  {
+  	letters.splice(index,1);
+
+  }
+
+if (!(word.indexOf(inz.value.toLowerCase())>-1))
 {
 wrong++;
 }
@@ -124,12 +145,12 @@ i++;
 }
 console.log(usedletters);
   });
-  display.innerHTML="Used Letters : ";
-  usedletters.forEach(function(k){
+  display.innerHTML=" ";
+//  usedletters.forEach(function(k){
 
-  display.innerHTML+=(" "+k);
+  //display.innerHTML+=(" "+k);
 
-  })
+//  })
     display.innerHTML+="<br> Wrong Answers:  "+wrong;
   console.log(wrong+" wrong")
   if (i<=0)
@@ -142,7 +163,42 @@ console.log(usedletters);
   }
   if (win)
     {display.innerHTML="You Win"}
+
+details2.innerHTML="Available Letters:";
+letters.forEach(function(x){
+details2.innerHTML+=(" "+x)
+if (wrong==1)
+{
+  img.src="images/0.png";
 }
+else if (wrong==2)
+{
+    img.src="images/1.png";
+}
+else if (wrong==3)
+{
+    img.src="images/2.png";
+}
+else if (wrong==4)
+{
+    img.src="images/3.png";
+}
+else if (wrong==5)
+{
+    img.src="images/4.png";
+}
+else if (wrong>=6)
+{
+  details2.innerHTML="You Lose"
+    img.src="images/5.png";
+    display2.innerHTML=nx;
+}
+})
+
+}
+
+
+
 inz.addEventListener("keypress",function(e){
 console.log(e.charCode);
 if (e.charCode==13)
