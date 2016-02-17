@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Hang Manong</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -54,11 +54,11 @@ input:focus {
 
 <div style="position:absolute; top: calc(50% - 250px); left: calc(50% - 450px);  height:480px; width:980px; background:rgba(10,10,10,0.6); border-radius:10px; padding:10px;">
 <center>
-  <h2 style="color:rgba(220,220,220,0.99); margin-top:30px;">
-POS HangMan
-</h2>
+  <h3 style="color:rgba(220,220,220,0.99); margin-top:30px;">
+   Wrath of 2:30 - Oras na!
+</h3>
 
-<p style="color:rgba(220,220,220,0.99);" id="details2">Available Letters: </p>
+<h4 style="color:rgba(220,220,220,0.99);" id="details2">Available Letters: </h4>
   <p id="display" style="color:rgba(220,220,220,0.99); margin-top:30px;">
 
 Details
@@ -77,7 +77,6 @@ Details
 
   </div>
 
-  <br>
   <button onclick="save();">Submit</button>
 
 </center>
@@ -93,7 +92,7 @@ inz=document.getElementById("in");
 img=document.getElementById("img");
 win=false;
 letters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-nx = "alexis";
+nx = "reina";
 word=[];
 count=0;
 while(count<nx.length)
@@ -189,7 +188,7 @@ else if (wrong==5)
 }
 else if (wrong>=6)
 {
-  details2.innerHTML="You Lose"
+  display.innerHTML="You Lose"
     img.src="images/5.png";
     display2.innerHTML=nx;
 }
