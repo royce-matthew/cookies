@@ -9,6 +9,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <script src="js/jquery.easing.min.js"></script>
+
+  <script src="js/jquery.js"></script>
+
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +26,29 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <style>
+  #triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-right: 0vw solid transparent;
+  border-top: 40vh solid white;
+  margin-bottom:0px;
+}
+    
+  .gallery
+  {
+    border: solid 1px; height:400px; width: 300px; padding:9px ;margin:3px 5px 5px 2px;
+    transition: ease-in 0.2s;
+    background-color:rgba(100,100,100,0.2);
+  }
+  .gallery:hover
+  {
+    height:410px; width:310px;
+  }
+  #quote
+  {
+    color:rgba(220,220,220,0.9); font-size:10vh; margin-top:40vh 
+  }
   .sm{
     margin:20px;
   }
@@ -61,19 +88,21 @@
       <div class="" style="background:url(images/bg.png); background-size:cover; height : 110vh ; width:95vw; padding:5vh; ">
 
 <center>
-<h2 style="color:rgba(220,220,220,0.9); font-size:10vh; margin-top:40vh ">A Catchy Line</h2>  
+<h2 id="quote" >An Artsy Quote . . . </h2>  
+<a href="#logo" class="smoothScroll"><button style="color:rgba(200,250,250,1);"> Learn More</button></a>
        </center>
       </div>
       <div style="top:900%; position:absolute;">
       x
       </div>
 
-<div style=" position:absolute; top: calc( 120vh - 100px );  height: 200px; left: calc( 50vw - 100px ); border-radius:128px ; width: 200px; background:url(images/logo.png); background-size:cover">
+<div style=" position:absolute; top: calc( 120vh - 100px );  height: 200px; left: calc( 50vw - 100px ); border-radius:128px ; width: 200px; background:url(images/logo.png); background-size:cover" id="logo">
 </div>
+
 <center>
 <h3 style="margin-top: 180px;margin-bottom:0px;color:rgba(50,50,50,1)"> ATG Design & Art Restoration </h3>
 <h5 style="color:rgba(100,100,100,0.9); ">I restore badass products for people just like you.</h5>
-<hr style="width:50vw">
+<img src="images/bam.png" style="width: 50vw; height:7vw;">
 </center>
 
 <div class="row container" style="margin-top:100px">
@@ -82,16 +111,16 @@
     Services
     </h5>
     <p style="line-height:2em">
-    <a  href="#" class="skill">Interior Design</a>&nbsp;
-    <a  href="#" class="skill">Graphic Design</a>&nbsp;
-    <a  href="#" class="skill">Landscaping</a>&nbsp;
-    <a  href="#" class="skill">Artwork Programming</a>&nbsp;
-    <a  href="#" class="skill">Artwork Production</a>&nbsp;
-    <a  href="#" class="skill">Conservation & Diagnosis</a>&nbsp;
-    <a  href="#" class="skill">Art Collection Management</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Interior Design</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Graphic Design</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Landscaping</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Artwork Programming</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Artwork Production</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Conservation & Diagnosis</a>&nbsp;
+    <a  href="#quote" class="skill smoothScroll">Art Collection Management</a>&nbsp;
    
-    <a  href="#" class="skill">Periodic Lectures</a>
-    <a  href="#" class="skill">Construction</a>
+    <a  href="#" class="skill smoothScroll">Periodic Lectures</a>
+    <a  href="#" class="skill smoothScroll">Construction</a>
     </p>
     <hr>
      <h5>
@@ -131,7 +160,7 @@ E-mail: moretina.atg@gmail.com
 
 </div>
 
-<div style="width:100vw; margin-top:100px; height: 25vh; background-color:rgba(40,40,70,0.7); padding:30px; ">
+<div style="width:100vw; margin-top:0px; height: 25vh; background-color:rgba(40,40,70,0.7); padding:30px; ">
 <center>
 <h3 style="color:rgba(200,200,200,1); margin-top:20px;">Maybe an Inspiring Quote ...</h3>
 <h5>- Author</h5>
@@ -203,8 +232,51 @@ E-mail: moretina.atg@gmail.com
     </div>
 
 </center>
+<div style="height:500vh; width: 100vw; background-color:#6A6A6A; margin-top:30vh; color:white;">
+<div id="triangle-down">
+
+</div>
+<h3 align=Center style="margin:50px">Restored Stuff Gallery (What to call this ?  )</h3>
+<center>
+<div class="row container">
+  <a class="four columns gallery" >
+    
+  </a>
+<a class="four columns gallery" >
+    
+  </a>
+  <a class="four columns gallery" >
+    
+  </a>
+</div>
+<div class="row container">
+  <a class="four columns gallery" >
+    
+  </a>
+<a class="four columns gallery" >
+    
+  </a>
+  <a class="four columns gallery" >
+    
+  </a>
+</div>
+<div class="row container">
+  <a class="four columns gallery" >
+    
+  </a>
+<a class="four columns gallery" >
+    
+  </a>
+  <a class="four columns gallery" >
+    
+  </a>
+</div>
+</center>
+
+</div>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="js/smoothscroll.js"></script>
   <script>
   
   </script>
