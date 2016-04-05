@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>CS 105 Project</h4>
+        <div style="color:rgba(100,100,100,0.7)">( Click on a value to drop )</div>
+          <div id="display" style="margin:20px"> </div>
+        <button onclick=" buble(B,B.length); refresh();">Sort</button>
+
+  			<div >
+  				<h4>Modify Array</h4>
+  				<input style="" id="inputBox">
+  				<button onclick="addToArray(parseInt('0'+inputBox.value)); refresh(); inputBox.value='';">Add Value</button></button>
+  				<button onclick="randomize(); refresh();">Random Number</button>
+  				<button onclick="B=[]; refresh(); ">
+  				AC
+  				</button>
+  				<button onclick="magic=true;">magic</button>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+<script>
+
+B=[]
+
+randomize = function()
+{
+	B.push(Math.floor((100*Math.random())+1));
+}
+display = document.getElementById("display");
+inputBox=document.getElementById("inputBox");
+function addToArray(x)
+{
+	B.push(x);
+}
+inputBox.addEventListener("keydown",function(f){
+
+if (f.keyCode==13)
+{
+	addToArray(parseInt('0'+inputBox.value)); 
+	refresh(); 
+	inputBox.value='';
+
+}
+
+});
+refresh = function()
+{
+i=0;
+	display.innerHTML="";
+B.forEach(function(f){
+
+display.innerHTML+="<a style='border:solid 1px; padding:3px; margin:4px; color:black; border-radius:4px;cursor:pointer;'  onclick='deletes("+i+")'>"+f+"</a>";
+i=i+1;
+})
+}
+deletes = function(i)
+{
+	if (confirm("Are you sure you want to delete item?")){
+	B.splice(i,1);
+	refresh();}
+	else{
+
+	}
+
+}
+swap = function(B,a,b)
+{	
+	hand = B[a];
+	B[a] = B[b];
+	B[b] = hand;
+}
+
+
+buble = function(A , n)
+{
+
+	for (var p = 1; p <= Math.floor(n/2); p++) {
+
+		for (var i = p - 1; n-1 >= i; i++) {
+		if (A[i] < A[i-1])
+			{
+				swap(A,i,i-1);}
+		};
+		for (var i = n - p - 1;  i >= p; i--) {
+			if (A[i] < A[i-1])
+				{
+					swap(A,i,i-1);
+				}
+		};
+		
+	};
+B = A;
+}
+
+randomize();
+randomize();
+randomize();
+randomize();
+randomize();
+refresh();
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
