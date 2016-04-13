@@ -54,14 +54,15 @@
         <h4>CS 105 Project</h4>
         <div style="color:rgba(100,100,100,0.7)">( Click on a value to drop )</div>
           <div id="display" style="margin:20px"> </div>
-        <button onclick=" buble(B,B.length); refresh();">Sort</button>
+        <button onclick=" B=buble(B,B.length); refresh(); talk('Progress',progress)">Bubble Sort</button>
+        <button onclick=" B = BinsertionSort(B,B.length); refresh(); talk('Progress',progress)">Binsertion Sort</button>
         <button onclick="talk('Progress',progress)">Show Progress</button>
   			<div >
   				<h4>Modify Array</h4>
   				<input style="" id="inputBox">
-  				<button onclick="addToArray(parseInt('0'+inputBox.value)); refresh(); inputBox.value='';">Add Value</button></button>
-  				<button onclick="randomize(); refresh();">Random Number</button>
-  				<button onclick="B=[]; refresh(); ">
+  				<button onclick="addToArray(parseInt(inputBox.value)); refresh(); inputBox.value=''; progress = 'you haven\'t sorted yet, please sort after modifying Array' ">Add Value</button></button>
+  				<button onclick="randomize(); refresh(); progress = 'You haven\'t sorted yet, please sort after modifying Array'">Random Number</button>
+  				<button onclick="B=[]; progress = 'You haven\'t sorted yet, please sort after modifying Array'; refresh(); ">
   				AC
   				</button>
 
@@ -105,6 +106,14 @@ function addToArray(x)
 {
 	B.push(x);
 }
+document.addEventListener("keydown",function(f)
+{
+	if (f.keyCode == 27)
+	{
+		xxx();
+	}
+
+});
 inputBox.addEventListener("keydown",function(f){
 
 if (f.keyCode==13)
@@ -114,7 +123,6 @@ if (f.keyCode==13)
 	inputBox.value='';
 
 }
-
 });
 refresh = function()
 {
@@ -138,6 +146,7 @@ deletes = function(i)
 	else{
 
 	}
+	progress='you have just deleted an item, Please sort again';
 
 }
 swap = function(B,a,b)
@@ -145,6 +154,76 @@ swap = function(B,a,b)
 	hand = B[a];
 	B[a] = B[b];
 	B[b] = hand;
+}
+
+
+function BinarySearch(A,n,v)
+{
+low = 0;
+high = n
+while (low <= high)
+  {
+     mid  = Math.floor((low+high)/2);
+   if (A[mid]== v) 
+      {
+      return mid;
+       break;
+      }
+   else if (A[mid] < v)
+      {
+        low = mid+1;
+      }
+   else
+      {
+       high = mid-1;
+      }
+
+  }
+
+   return low;
+}
+
+function BinsertionSort(A,n)
+{
+
+	progress="";
+	A.forEach(function(f){
+
+    progress = progress+"<td style='color:navy'>"+f+"</td>";
+	
+
+	});
+  for (i=1;i <= n-1; i++)
+  {
+    ins = A[i];
+    p = BinarySearch(A, i-1, ins);
+    for (j =i-1; j>= p; j-- )
+    {
+      A[j+1] = A[j];
+    }
+    A[p] = ins;
+    
+
+    progress=progress+"<tr>"
+    k=0;
+    A.forEach(function(f){
+
+    if (k>i){
+    	//red
+    progress = progress+"<td style='color:rgb(200,10,10)'>"+f+"</td>";
+	}
+	else
+	{
+    progress = progress+"<td style='color:rgb(10,80,10)'>"+f+"</td>";
+	}
+	k=k+1;
+
+	})
+    	progress = progress+"</tr>"
+
+
+  }
+  return A;
 }
 
 progress = "";
@@ -155,7 +234,6 @@ progress = "";
     B.forEach(function(f){
     progress = progress+"<td>"+f+"</td>"});
     progress = progress+"</tr>";
-B=A;
 
 	for (var p = 1; p <= Math.floor(n/2); p++) {
 
@@ -171,22 +249,30 @@ B=A;
 				}
 		};
 
-		B = A;
     progress=progress+"<tr>"
-    B.forEach(function(f){
-    progress = progress+"<td>"+f+"</td>"})
-    progress = progress+"</tr>"
-		console.log(B);
-	};
-B = A;
-}
+    k=0;
+    A.forEach(function(f){
 
-randomize();
-randomize();
-randomize();
-randomize();
-randomize();
+    	if ((k>p-1)&&(n-p>k)){
+    progress = progress+"<td style='color:rgb(200,10,10)'>"+f+"</td>";
+}
+else
+{
+    progress = progress+"<td style='color:rgb(10,80,10)'>"+f+"</td>";
+}
+k=k+1;
+
+})
+    progress = progress+"</tr>"
+	};
+	 progress=progress+"<tfoor>"
+    A.forEach(function(f){
+    progress = progress+"<td style='font-size: 20px; color: navy'>"+f+"</td>"})
+    progress = progress+"</tfoot>"
+	return A;
+}
 refresh();
+talk('Welcome','<h5>Your Array is still Empty, Please Add Values </h5>');
 </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
