@@ -45,7 +45,31 @@
   font-weight: bold;
   transition: ease-in-out 0.2s;
   border: solid 1px white; }
+ul {
 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgba(100,132,83,0.5);
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font-size:20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(100,132,83,0.5);
+}
   @media only screen and (max-width: 500px) {
   
 .modal{
@@ -79,9 +103,30 @@
 </head>
 <body>
 
+
+
+
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
- <div class="eight columns" style="padding:20px; margin-top: calc(10% - 20px); ">
+
+
+
+
+
+<ul>
+  <li><a class="active" href="#home"><img src="a.png">Home</a></li>
+  <li><a href="#news">Amenities</a></li>
+  <li><a href="#contact">Location</a></li>
+  <li><a href="#about">Contact Us</a></li>
+</ul>
+
+
+
+
+
+
+ <div class="seven columns" style="padding:20px; margin-top: calc(5% - 20px); ">
           <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 
 
@@ -96,13 +141,13 @@
 
           <script type='text/javascript'>function init_map(){var myOptions = {zoom:18,center:new google.maps.LatLng(14.6372394,121.07057140000006),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(14.6372394,121.07057140000006)});infowindow = new google.maps.InfoWindow({content:'<strong>Avisha</strong><br>One Alvero Street<br> Quezon City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
           </div>
-      <div class="four columns" style="margin-top: 10%; background-color:#648453; padding:20px; ">
-        <h5 style=" color:white;">Location</h5>
-        <hr>
-        <p style="color:white;">
+      <div class="four columns" style="margin-top: 5%; background-color:#648453; padding:20px; ">
+        <h5 style="font-size:30px;  color:white;">Location</h5>
+        <hr style="margin-top:0px;">
+        <p style="color:white; font-size:16px;">
         You can find us strategically located along Alvero Street. One Avisha is a stone’s throw away from Gate 2.5 of Ateneo, Shakey’s and McDonald’s – perfect for late night burger cravings or ice cream fix. 
         </p>
-        <p style="color:white;">
+        <p style="color:white; font-size:16px;">
         Robinson’s Easymart is also located on the ground floor to provide you with the essentials. LRT
 Katipunan Station is less than a kilometer away. There are also coffee shops, convenience stores,
 pizza parlors, nail and waxing salons, laundry shops, banks, and a gym that are all within a walking
