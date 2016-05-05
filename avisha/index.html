@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+<style>
+.sample-photo{border:none 1px white; width:250px; height:300px; margin-top:10px;}
+.modal{
+  top:-100%;
+  left: calc( 15vw - 15px );
+  position: fixed;
+  z-index:30;
+  width: 70vw;
+  border-radius:10px;
+  transition: ease-in-out 1s;
+  max-height: 90vh;
+  overflow: scroll;
+  color:white;
+  background-color: rgba(50, 50, 50, 0.97);
+  padding:30px;
+
+  padding-bottom:4vh;
+  border: solid 1px;
+}
+
+.send-button {
+  display: inline-block;
+  text-decoration: none;
+  /* margin-top: 20px !important; */
+  color: white;
+  background-color:transparent;
+  padding: 10px ;
+
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  height:10vh;
+  width: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  transition: ease-in-out 0.2s;
+  border: solid 1px white; }
+
+  @media only screen and (max-width: 500px) {
+  
+.modal{
+  left: calc( 5vw  - 15px );
+  width: 90vw;
+  padding: 15px;
+}
+
+}
+</style>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<style>
+
+
+</style>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ <div class="eight columns" style="padding:20px; margin-top: calc(10% - 20px); ">
+          <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+
+
+
+          <div style='overflow:hidden;height:500px;width:800px; margin:auto; '><div id='gmap_canvas' style='height:500px;width:800px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+
+          </div> 
+
+          <a href='https://embedmaps.net'>google widgets</a> 
+
+          <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=893685776f147bab50fa5cb90b09868fc6a58f09'></script>
+
+          <script type='text/javascript'>function init_map(){var myOptions = {zoom:18,center:new google.maps.LatLng(14.6372394,121.07057140000006),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(14.6372394,121.07057140000006)});infowindow = new google.maps.InfoWindow({content:'<strong>Avisha</strong><br>One Alvero Street<br> Quezon City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+          </div>
+      <div class="four columns" style="margin-top: 10%; background-color:#648453; padding:20px; ">
+        <h5 style=" color:white;">Location</h5>
+        <hr>
+        <p style="color:white;">
+        You can find us strategically located along Alvero Street. One Avisha is a stone’s throw away from Gate 2.5 of Ateneo, Shakey’s and McDonald’s – perfect for late night burger cravings or ice cream fix. 
+        </p>
+        <p style="color:white;">
+        Robinson’s Easymart is also located on the ground floor to provide you with the essentials. LRT
+Katipunan Station is less than a kilometer away. There are also coffee shops, convenience stores,
+pizza parlors, nail and waxing salons, laundry shops, banks, and a gym that are all within a walking
+distance.
+        </p>
+       
+      </div>
+
+
+
+
+
+
+
+
+<div id="modal" class="modal" >
+  <button onclick="xxx();"> Close</button>
+</div>
+
+
+
+
+
+
+<script>
+active=true;
+    modal=document.getElementById("modal");
+  
+  x="<button onclick='xxx();' class='send-button' style='width:100%;'> Close</button>"
+  xxx=function(){
+    modal.style.top="-100%";
+active=false;
+  };
+
+  talk=function(t,s, img1,img2){
+    modal.style.top='3vh';
+    if (img1=='')
+    {
+
+    modal.innerHTML="<h1 align='center'>"+t+"</h1><hr><p>"+s+"</p><br>"+x;
+    active=true;
+
+    }
+    else
+    {
+    modal.innerHTML="<h1 align='center'>"+t+"</h1><center class='row'><div class='six columns sample-photo' style='background: url("+img1+") no-repeat center ; background-size: auto 300px; '></div><div class='six columns sample-photo' style='background: url("+img1+") no-repeat center ; background-size: auto 300px; '></div> </center> <p style='margin-top:40px'><hr>"+s+"</p><br>"+x;
+    active=true; 
+    }
+  };
+  document.addEventListener("keydown",function(f){if (f.keyCode == 27){
+
+    if (active)
+    {
+      xxx();
+    }
+
+  } 
+});
+</script>
+<!--END MODAL-->
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
