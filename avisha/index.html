@@ -54,7 +54,7 @@
   padding: 10px ;
 
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 0px;
   text-align: center;
   height:10vh;
   width: 50%;
@@ -78,6 +78,15 @@ li {
 }
 
 li a {
+  font-size:20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 35px;
+    text-decoration: none;
+}
+
+.title {
   font-size:20px;
     display: block;
     color: white;
@@ -151,8 +160,8 @@ li a:hover {
 
 
 <ul class="row" >
-<li><div class="" href="#home" style="line-height:1em; font-size:20px; margin-top:20px;"><a>ONE AVISHA RESIDENCES 
-<button id="toggle" onclick="talk('',navigation)" style="border:none; paddin:0px; color: white; font-size:20px;">=</button></a></li>
+<li><div class="" href="#home" style="line-height:1em; font-size:20px; margin-top:20px;"><div class="title">ONE AVISHA RESIDENCES 
+<button id="toggle" onclick="talk('',navigation)" style="border:none; paddin:0px; color: white; font-size:20px;">=</button></div></li>
   <li><a class="navbutt" href="#home" style=""><img src="images/png/home.png" height="42px"><br>Home</a></li>
   <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="42px"><br>Amenities</a></li>
 
@@ -214,7 +223,7 @@ distance.
 
 
 <script>
-navigation = "<center><a href='#' class='mobnav'>Home</a><hr class='spacer' ><a href='#' class='mobnav'>Amenities</a><hr class='spacer'><a href='#' class='mobnav'>Location</a><hr class='spacer'><a href='#' class='mobnav'>Contact Us</a><hr class='spacer'></center>";
+navigation = "<center><a href='#' class='mobnav'>Home</a><hr class='spacer' ><a href='#' class='mobnav'>Amenities</a><hr class='spacer'><a href='#' class='mobnav'>Location</a><hr class='spacer'><a href='#' class='mobnav'>Contact Us</a></center>";
 active=true;
     modal=document.getElementById("modal");
   
