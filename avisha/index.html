@@ -9,6 +9,23 @@
   <meta name="description" content="">
   <meta name="author" content="">
 <style>
+.navbutt{
+  margin-top:10px;
+  border-radius: 1%;
+  line-height:1em;
+}
+.spacer{
+  margin:9%;
+}
+.mobnav{
+  color:white;
+  font-size: 25px;
+  margin-bottom: 0px;  
+  text-decoration: none;
+}
+#toggle{
+  visibility: hidden;
+}
 .sample-photo{border:none 1px white; width:250px; height:300px; margin-top:10px;}
 .modal{
   top:-100%;
@@ -21,7 +38,7 @@
   max-height: 90vh;
   overflow: scroll;
   color:white;
-  background-color: rgba(50, 50, 50, 0.97);
+  background-color: rgba(130,162,113,0.97);
   padding:30px;
 
   padding-bottom:4vh;
@@ -45,6 +62,7 @@
   font-weight: bold;
   transition: ease-in-out 0.2s;
   border: solid 1px white; }
+  #woo{padding:20px; margin-top: calc(5% - 20px); }
 ul {
 
     list-style-type: none;
@@ -69,16 +87,33 @@ li a {
 }
 
 li a:hover {
-    background-color: rgba(100,132,83,0.5);
+  font-size: 24px;
+    background-color: rgba(100,132,83,0.08);
+
 }
   @media only screen and (max-width: 500px) {
-  
+
+#toggle{
+  visibility: visible;
+}
+    ul{
+    background-color:rgba(160,192,143,0.9);
+      width:100vw;
+      position:fixed;
+      z-index: 3;
+    }
+    #woo
+    {
+      margin-top:120px;
+    }
+  .navbutt {
+    display:none;
+  }
 .modal{
   left: calc( 5vw  - 15px );
   width: 90vw;
   padding: 15px;
 }
-
 }
 </style>
   <!-- Mobile Specific Metas
@@ -115,13 +150,16 @@ li a:hover {
 
 
 
-<ul class="row">
-  <li><a class="" href="#home" style="line-height:1em;"><img src="images/png/home.png" height="42px"><br>Home</a></li>
-  <li><a class="" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="42px"><br>Amenities</a></li>
+<ul class="row" >
+<li><div class="" href="#home" style="line-height:1em; font-size:20px; margin-top:20px;"><a>ONE AVISHA RESIDENCES 
+<button id="toggle" onclick="talk('',navigation)" style="border:none; paddin:0px; color: white; font-size:20px;">=</button></a></li>
+  <li><a class="navbutt" href="#home" style=""><img src="images/png/home.png" height="42px"><br>Home</a></li>
+  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="42px"><br>Amenities</a></li>
 
-  <li><a class="active" href="#home" style="line-height:1em;"><img src="images/png/location.png" height="42px"><br>Location</a></li>
+  <li><a class="active navbutt" href="#home" style="line-height:1em;"><img src="images/png/location.png" height="42px"><br>Location</a></li>
 
-  <li><a class="" href="#home" style="line-height:1em;"><img src="images/png/technology.png" height="42px"><br>Contact Us</a></li>
+  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/technology.png" height="42px"><br>Contact Us</a></li>
+
 </ul>
 
 
@@ -129,12 +167,12 @@ li a:hover {
 
 
 
- <div class="seven columns" style="padding:20px; margin-top: calc(5% - 20px); ">
+ <div class="seven columns" id="woo" >
           <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 
 
 
-          <div style='overflow:hidden;height:500px;width:100%; margin:auto; '><div id='gmap_canvas' style='height:500px;width:100%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+          <div style='overflow:hidden;height:500px;width:100%; margin:auto; border: solid 1px;'><div id='gmap_canvas' style='height:500px;width:100%; border: solid 1px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
 
           </div> 
 
@@ -176,6 +214,7 @@ distance.
 
 
 <script>
+navigation = "<center><a href='#' class='mobnav'>Home</a><hr class='spacer' ><a href='#' class='mobnav'>Amenities</a><hr class='spacer'><a href='#' class='mobnav'>Location</a><hr class='spacer'><a href='#' class='mobnav'>Contact Us</a><hr class='spacer'></center>";
 active=true;
     modal=document.getElementById("modal");
   
@@ -187,19 +226,9 @@ active=false;
 
   talk=function(t,s, img1,img2){
     modal.style.top='3vh';
-    if (img1=='')
-    {
-
-    modal.innerHTML="<h1 align='center'>"+t+"</h1><hr><p>"+s+"</p><br>"+x;
-    active=true;
-
-    }
-    else
-    {
-    modal.innerHTML="<h1 align='center'>"+t+"</h1><center class='row'><div class='six columns sample-photo' style='background: url("+img1+") no-repeat center ; background-size: auto 300px; '></div><div class='six columns sample-photo' style='background: url("+img1+") no-repeat center ; background-size: auto 300px; '></div> </center> <p style='margin-top:40px'><hr>"+s+"</p><br>"+x;
+    modal.innerHTML=t+" <p style='margin-top:40px'>"+s+"</p><br>"+x;
     active=true; 
-    }
-  };
+   };
   document.addEventListener("keydown",function(f){if (f.keyCode == 27){
 
     if (active)
