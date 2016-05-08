@@ -54,7 +54,7 @@
   visibility: hidden;
 }
 .sample-photo{border:none 1px white; width:250px; height:300px; margin-top:10px;}
-.modal{
+.navmodal{
   top:0px;
   left: -100%;
   position: fixed;
@@ -71,6 +71,25 @@
   padding-bottom:4vh;
   border: solid 1px;
 }
+.modal{
+  top:0px;
+  left: -100%;
+  position: fixed;
+  z-index:30;
+  width: 70vw;
+  margin:0px 15vw;
+  border-radius:10px;
+  transition: ease-in-out 1s;
+  max-height: 90vh;
+  overflow: scroll;
+  color:white;
+  background-color:rgba(47,51,47,0.97);
+  padding:30px;
+
+  padding-bottom:4vh;
+  border: solid 1px;
+}
+
 
 .send-button {
   display: inline-block;
@@ -166,12 +185,23 @@ li a:hover {
   .navbutt {
     display:none;
   }
-.modal{
+ .navmodal{
 	top:4.5vh;
   left: -100%;
   width: 20vw;
   padding: 0px;
   height: 100vh;
+}
+.send-button{
+	width:50vw;
+}
+.modal{
+	top:4.5vh;
+  left: -100%;
+  width: 90vw;
+  padding: 0px;
+  height: 80vh;
+  margin-left: 5vw;
 }
 }
 </style>
@@ -208,7 +238,7 @@ li a:hover {
 
 
 
-<button id="toggle" onclick="talk('',navigation)" style="position:absolute; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px"><img src="images/menu.svg" height="20px"></button>
+<button id="toggle" onclick="navtalk('',navigation)" style="position:fixed; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px"><img src="images/menu.svg" height="20px"></button>
 <ul  >
 <li><div class="title" 	>
 
@@ -240,10 +270,12 @@ ONE AVISHA RESIDENCES
 <div class="Rooms row " style="margin: 20px 20px 100px 20px;">
 	<div class="four columns" style=" padding: 20px">
 		<h4 align=Center>Rooms</h4>
-		<p>One Avisha Residences is an ideal living space for students who want to enjoy a conducive and relaxing environment. It offers high quality accommodations at a favorable price. With unparalleled comfort and sensible amenities, it is sure to make a student’s stay a pleasurable experience. </p>
+		<p>You value privacy. So do we. The number of people sharing a room is limited in order to maximize personal space per person. White walls and dark accents – minimalist – is our style for the interiors of the rooms. All air-conditioned rooms come with twin-sized beds, refrigerator, individual study table and safety deposit box, and bathrooms en suite. Rooms are Cable TV ready.
+ </p>
 		<center>
-		<button style="color:white; background-color:#648453; border-radius:0px; border:none">View Gallery</button>
+		<button style="color:white; background-color:#648453; border-radius:0px; border:none" onclick="talk('Gallery',galleryLayout)">View Gallery</button >
 		</center>
+		<hr>
 
 	</div>
 
@@ -340,20 +372,19 @@ distance.
 
 
 
-<div id="newModal">
 
+
+
+
+
+
+
+<div id="navmodal" class="navmodal" >
+  <button onclick="navxxx();">x</button>
 </div>
 
-
-
-
-
-
-
-
-
 <div id="modal" class="modal" >
-  <button onclick="xxx();">x</button>
+  <button onclick="navxxx();">close</button>
 </div>
 
 
@@ -372,20 +403,43 @@ navigation+="<a href='#' class='mobnav'><img src='images/png/location.png' heigh
 navigation+="<a href='#' class='mobnav'><img src='images/png/technology.png' height='30px'><br>Contact Us</a><hr class='spacer' >"
 
 navigation+="</center>"
+
+
+galleryLayout="<div><h4>Our Rooms</h4><p>One Avisha Residences is an ideal living space for students who want to enjoy aconducive and relaxing environment. It offers high quality accommodations at a favorable price. With unparalleled comfort and sensible amenities, it is sure to make a student’s stay a pleasurable experience. </p><img src='images/a.png' width='90%'>";
+galleryLayout+="<br><h4>Two in a Room</h4><p>Two in a room (premiere, 32 sqm)</p><hr><br>";
+galleryLayout+="<img src='images/b.png' width='90%'>";
+galleryLayout+="<img src='images/c.png' width='90%'>";
+galleryLayout+="</div>"
+
+
 active=true;
-    modal=document.getElementById("modal");
-  
-  x="<button onclick='xxx();' class='send-button' style='width:100%;'> x</button>"
-  xxx=function(){
+    navmodal=document.getElementById("navmodal");
+  modal=document.getElementById("modal");
+  navx="<button onclick='navxxx();' class='send-button' style='width:100%;'> x</button>"
+  x="<button onclick='xxx();' class='send-button' style='width:80%;'> Close</button>"
+  navxxx=function(){
+    navmodal.style.left="-100%";
+active=false;
+  };
+
+    xxx=function(){
     modal.style.left="-100%";
 active=false;
   };
 
-  talk=function(t,s, img1,img2){
+
+  talk=function(t,s, color,img2){
     modal.style.left="0px";
-    modal.innerHTML=t+" <p style='margin-top:40px'>"+s+"</p><br>"+x;
+    modal.innerHTML=" <center>"+t+"<p style='margin-top:40px'>"+s+"</p><br>"+x+"</center>";
     active=true; 
    };
+
+  navtalk=function(t,s, img1,img2){
+    navmodal.style.left="0px";
+    navmodal.innerHTML=t+" <p style='margin-top:40px'>"+s+"</p><br>"+navx;
+    navactive=true; 
+   };
+
   document.addEventListener("keydown",function(f){if (f.keyCode == 27){
 
     if (active)
