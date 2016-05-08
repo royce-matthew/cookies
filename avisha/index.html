@@ -298,7 +298,10 @@ Learn More
 	    	<p style="font-size:25px; margin:0px; color:rgb(20,20,20)">Two in a Room</p>	
 		    <p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Premiere)</p>
 		    <p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd<br>
-    		<button style="margin-top:30px; background-color:#ea967c; border:none; border-radius:0px; color:white;">View Rates</button> <hr>	</p>
+    		<button style="margin-top:30px; background-color:#ea967c; border:none; border-radius:0px; color:white;" 
+    		onclick="talk('<h4>'+rates[0][0]+'</h4>','<br>Monthly: No Lock in : '+rates[0][1]+'<br>Yearly: Lock in (12 Months): '+rates[0][2]+'<hr><h5>Other Rates:</h5>'+magicTable)"
+
+    		>View Rates</button> <hr>	</p>
 
 
 		</div>
@@ -311,7 +314,9 @@ Learn More
     	<p style="font-size:25px; margin:0px; color:rgb(20,20,20)">Two in a Room</p>
 	    <p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Deluxe)</p>
 		<p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd<br>
-    		<button style="margin-top:30px; background-color:#1ea6b0; border:none; border-radius:0px; color:white;">View Rates</button> <hr>	</p>
+    		<button style="margin-top:30px; background-color:#1ea6b0; border:none; border-radius:0px; color:white;" 
+    		onclick="talk('<h4>'+rates[1][0]+'</h4>','<br>Monthly: No Lock in : '+rates[1][1]+'<br>Yearly: Lock in (12 Months): '+rates[1][2]+'<hr><h5>Other Rates:</h5>'+magicTable)"
+    		>View Rates</button> <hr>	</p>
 
     </div>
 
@@ -325,14 +330,24 @@ Learn More
     		<p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Deluxe)</p>
     		<p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd <br>
 
-    		<button style="margin-top:30px; background-color:#423151; color:white; border:none; border-radius:0px;">View Rates</button>
+    		<button style="margin-top:30px; background-color:#423151; color:white; border:none; border-radius:0px;" 
+    		onclick="talk('<h4>'+rates[2][0]+'</h4>','<br>Monthly: No Lock in : '+rates[2][1]+'<br>Yearly: Lock in (12 Months): '+rates[2][2]+'<hr><h5>Other Rates:</h5>'+magicTable)">View Rates</button>
     		<hr>	</p>
 		</div>
 
 	</div>
 
 </div>
+<script>
+rates = [["Two in a Room (Premiere 32 sqm) ", "Php 12,500", "PhP 140,000"],["Two in a Room (Deluxe, 26 sqm)", "Php 10,500", "PhP 118,000"],["Three in a Room", "Php 8,500", "PhP 96,000"]];
 
+magicTable= "<table><thead><td>Room Type</td><td>Per month <br>(No lock-in)</td><td>Per year<br>(12 month lock-in)</td></thead> ";
+
+rates.forEach(function (f){ 
+magicTable+="<tr><td>"+f[0]+"</td><td>"+f[1]+"</td><td>"+f[2]+"</td></tr>";
+});
+magicTable +="</table>"
+</script>
 
 
 	
