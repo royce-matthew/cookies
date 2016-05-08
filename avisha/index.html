@@ -9,6 +9,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
 <style>
+.greenbox
+{
+	width:calc(100vw - 40px); height:100vh; color:white; background-color:#648453; margin-bottom:10vh; padding:20px;
+}
+.triangle
+{
+
+	width: 0;
+	height: 0;
+	border-bottom: 30vh solid #648453;
+	border-right: 100vw solid transparent;"></
+}
 .navbutt{
   margin-top:10px;
   border-radius: 1%;
@@ -38,7 +50,7 @@
   max-height: 90vh;
   overflow: scroll;
   color:white;
-  background-color: rgba(130,162,113,0.97);
+  background-color:rgba(47,51,47,0.97);
   padding:30px;
 
   padding-bottom:4vh;
@@ -66,10 +78,14 @@
 ul {
 
     list-style-type: none;
-    margin: 0;
+    margin: 0px;
+    top:-1px;
     padding: 0;
+    width:100vw;
     overflow: hidden;
-    background-color:rgba(100,132,83,0.5);
+    background-color:#2f332f;
+    position: fixed;
+    z-index: 18;
 }
 
 li {
@@ -78,7 +94,7 @@ li {
 }
 
 li a {
-  font-size:20px;
+  font-size:15px;
     display: block;
     color: white;
     text-align: center;
@@ -87,11 +103,11 @@ li a {
 }
 
 .title {
-  font-size:20px;
+  font-size:16px;
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 35px;
+    padding: 10px 35px;
     text-decoration: none;
 }
 
@@ -100,20 +116,35 @@ li a:hover {
     background-color: rgba(100,132,83,0.08);
 
 }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 800px) {
+.triangle
+  	{
 
+	width: 0;
+	height: 0;
+	border-bottom: 150px solid #648453;
+	border-right: 100vw solid transparent;"></
+  	}
+.title
+{
+	width: 100vw;
+	vertical-align: center;
+	text-align: center;
+	font-size: 12px;
+	padding:0px;
+
+}
 #toggle{
   visibility: visible;
 }
     ul{
-    background-color:rgba(160,192,143,0.9);
       width:100vw;
       position:fixed;
       z-index: 3;
     }
     #woo
     {
-      margin-top:120px;
+      margin-top:10px;
     }
   .navbutt {
     display:none;
@@ -159,15 +190,16 @@ li a:hover {
 
 
 
-<ul class="row" >
-<li><div class="" href="#home" style="line-height:1em; font-size:20px; margin-top:20px;"><div class="title">ONE AVISHA RESIDENCES 
-<button id="toggle" onclick="talk('',navigation)" style="border:none; paddin:0px; color: white; font-size:20px;">=</button></div></li>
-  <li><a class="navbutt" href="#home" style=""><img src="images/png/home.png" height="42px"><br>Home</a></li>
-  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="42px"><br>Amenities</a></li>
+<ul  >
+<li><div class="title" 	><center>ONE AVISHA RESIDENCES 
+<button id="toggle" onclick="talk('',navigation)" style="border:none; paddin:0px; color: white; font-size:20px;">&#9660;</button></center></div></li>
+  <li><a class="navbutt" href="#home" style=""><img src="images/png/home.png" height="25px"> Home</a></li>
+  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/bed.png" height="25px" style="margin-right: 5px;">Rooms</a></li>
+  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="25px">Amenities</a></li>
 
-  <li><a class="active navbutt" href="#home" style="line-height:1em;"><img src="images/png/location.png" height="42px"><br>Location</a></li>
+  <li><a class="active navbutt" href="#home" style="line-height:1em;"><img src="images/png/location.png" height="25px">Location</a></li>
 
-  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/technology.png" height="42px"><br>Contact Us</a></li>
+  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/technology.png" height="25px">Contact Us</a></li>
 
 </ul>
 
@@ -175,7 +207,26 @@ li a:hover {
 
 
 
+<div style="height:90vh; width:90vw; margin: calc(5vh + 100px) 5vw; border:solid 3px;; border-radius:20px;">
 
+<h4 align="center">PlaceHolder For Home</h4>
+<hr>
+</div>
+
+
+<div class="triangle"></div>
+
+
+
+
+<div class="greenbox">
+
+
+<h4 style="margin-top:10px" align=Center>Amenities</h4>
+
+</div>
+<hr>
+<h4 align=center>Location</h4>
  <div class="seven columns" id="woo" >
           <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 
@@ -191,13 +242,13 @@ li a:hover {
 
           <script type='text/javascript'>function init_map(){var myOptions = {zoom:18,center:new google.maps.LatLng(14.6372394,121.07057140000006),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(14.6372394,121.07057140000006)});infowindow = new google.maps.InfoWindow({content:'<strong>Avisha</strong><br>One Alvero Street<br> Quezon City<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
           </div>
-      <div class="four columns" style="margin-top: 5%; background-color:#648453; padding:20px; ">
-        <h5 style="font-size:30px;  color:white;">Location</h5>
+      <div class="four columns" style="margin-top: 5%; background-color:#648453; padding:20px; color:white; min-height:502px;">
+        <h5 style="font-size:30px;  ">Location</h5>
         <hr style="margin-top:0px;">
         <p style="color:white; font-size:16px;">
         You can find us strategically located along Alvero Street. One Avisha is a stone’s throw away from Gate 2.5 of Ateneo, Shakey’s and McDonald’s – perfect for late night burger cravings or ice cream fix. 
         </p>
-        <p style="color:white; font-size:16px;">
+        <p style=" font-size:16px;">
         Robinson’s Easymart is also located on the ground floor to provide you with the essentials. LRT
 Katipunan Station is less than a kilometer away. There are also coffee shops, convenience stores,
 pizza parlors, nail and waxing salons, laundry shops, banks, and a gym that are all within a walking
