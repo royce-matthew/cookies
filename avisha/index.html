@@ -6,6 +6,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>One Avisha Residences</title>
+
+<script src="js/jquery.easing.min.js"></script>
   <meta name="description" content=" Draft">
   <meta name="author" content="">
 <style>
@@ -203,7 +205,7 @@ li a:hover {
 	top:4.5vh;
   left: -100%;
   width: 90vw;
-  padding: 0px;
+  padding: 10px;
   height: 80vh;
   margin-left: 5vw;
 }
@@ -244,29 +246,33 @@ li a:hover {
 
 <button id="toggle" onclick="navtalk('',navigation)" style="position:fixed; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px; "><img src="images/menu.svg" height="20px"></button>
 <ul  >
+
 <li><div class="title" 	>
 
 <center>
-ONE AVISHA RESIDENCES 
-</center></div></li>
+
+<img src="images/sampleLogo.svg" height="32px">
+ &nbsp;&nbsp;&nbsp;&nbsp;ONE AVISHA RESIDENCES </center></div></li>
 
 
-  <li><a class="navbutt" href="#home" style=""><img src="images/png/home.png" height="25px"> Home</a></li>
-  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/bed.png" height="25px" style="margin-right: 5px;">Rooms</a></li>
-  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/social-2.png" height="25px">Amenities</a></li>
 
-  <li><a class="active navbutt" href="#home" style="line-height:1em;"><img src="images/png/location.png" height="25px">Location</a></li>
 
-  <li><a class="navbutt" href="#home" style="line-height:1em;"><img src="images/png/technology.png" height="25px">Contact Us</a></li>
+  <li><a class="navbutt smoothScroll" href="#home" style=""><img src="images/png/home.png" height="25px"> Home</a></li>
+  <li><a class="navbutt smoothScroll" href="#rooms" style="line-height:1em;"><img src="images/png/bed.png" height="25px" style="margin-right: 5px;">Rooms</a></li>
+  <li><a class="navbutt smoothScroll" href="#amenities" style="line-height:1em;"><img src="images/png/social-2.png" height="25px">Amenities</a></li>
+
+  <li><a class="active navbutt smoothScroll" href="#location" style="line-height:1em;"><img src="images/png/location.png" height="25px">Location</a></li>
+
+  <li><a class="navbutt smoothScroll" href="#contact-us" style="line-height:1em;"><img src="images/png/technology.png" height="25px">Contact Us</a></li>
 
 </ul>
 
 
-<div style="width:100vw; background:url(images/header.png); background-size: cover ;background-position: 80% 10% ; height:500px; margin:60px 0px; ">
+<div id="home" style="width:100vw; background:url(images/header.png); background-size: cover ;background-position: 80% 10% ; height:500px; margin:60px 0px; ">
 
-<h4 style="color:white; position: relative; top: calc(100% - 140px); margin:40px; z-index:10; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where function and elegance meet.</span><br> 
+<h4 style="color:white; position: relative; top: calc(100% - 140px); margin:40px; z-index:1; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where function and elegance meet.</span><br> 
 
-<button onclick="talk('One Avisha Residences','One Avisha Residences is the newest student dormitory in Katipunan. We built it for students who want to live closer to school. We took into consideration all their preferences in choosing a home- away-from-home and matched it with the latest in terms of room design, layout, and security measures. We did all these because we want you to have the best college experience. So allow us to become your home!')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;">
+<button onclick="talk('One Avisha Residences','One Avisha Residences is the newest student dormitory in Katipunan. We built it for students who want to live closer to school. We took into consideration all their preferences in choosing a home- away-from-home and matched it with the latest in terms of room design, layout, and security measures. We did all these because we want you to have the best college experience. So allow us to become your home!')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;" id="rooms">
 Learn More
 </button></h4>
 </div>
@@ -275,8 +281,8 @@ Learn More
 
 
 
-<hr class="">
-<div class="Rooms row " style="margin: 20px 20px 100px 20px;">
+<hr class="" >
+<div class="Rooms row " id="" style="margin: 20px 20px 100px 20px;">
 	<div class="four columns" style=" padding: 20px">
 		<h4 align=Center>Rooms</h4>
 		<p>You value privacy. So do we. The number of people sharing a room is limited in order to maximize personal space per person. White walls and dark accents – minimalist – is our style for the interiors of the rooms. All air-conditioned rooms come with twin-sized beds, refrigerator, individual study table and safety deposit box, and bathrooms en suite. Rooms are Cable TV ready.
@@ -356,7 +362,7 @@ magicTable +="</table>"
 
 
 
-<div class="greenbox">
+<div class="greenbox" id="amenities">
 
 
 <h4 style="margin-bottom:50px" align=Center>Amenities</h4>
@@ -448,7 +454,7 @@ magicTable +="</table>"
 
 </div>
 <hr>
-<h4 align=center>Location</h4>
+<h4 align=center id="location">Location</h4>
  <div class="seven columns" id="woo" >
           <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 
@@ -501,15 +507,16 @@ distance.
 
 
 
+<script src="js/jquery.js"></script>
 <script>
-navigation = "<center><hr class='spacer'><a href='#' class='mobnav'><img src='images/png/home.png' height='30px'><br>Home</a><hr class='spacer' >";
-navigation+="<a href='#' class='mobnav'><img src='images/png/bed.png' height='30px'><br>Rooms</a><hr class='spacer' >"
+navigation = "<center><hr class='spacer'><a href='#home' class='mobnav smoothScroll'><img src='images/png/home.png' height='30px'><br>Home</a><hr class='spacer' >";
+navigation+="<a href='#rooms' class='mobnav'><img src='images/png/bed.png' height='30px'><br>Rooms</a><hr class='spacer' >"
 
-navigation+="<a href='#' class='mobnav'><img src='images/png/social-2.png' height='30px'><br>Amenities</a><hr class='spacer' >"
+navigation+="<a href='#amenities' class='mobnav smoothScroll'><img src='images/png/social-2.png' height='30px'><br>Amenities</a><hr class='spacer' >"
 
-navigation+="<a href='#' class='mobnav'><img src='images/png/location.png' height='30px'><br>Location</a><hr class='spacer' >"
+navigation+="<a href='#location' class='mobnav smoothScroll'><img src='images/png/location.png' height='30px'><br>Location</a><hr class='spacer' >"
 
-navigation+="<a href='#' class='mobnav'><img src='images/png/technology.png' height='30px'><br>Contact Us</a><hr class='spacer' >"
+navigation+="<a href='#contact-us' class='mobnav smoothScroll'><img src='images/png/technology.png' height='30px'><br>Contact Us</a><hr class='spacer' >"
 
 navigation+="</center>"
 
@@ -559,8 +566,10 @@ active=false;
   } 
 });
 </script>
-<!--END MODAL-->
 
+
+<!--END MODAL-->
+<script src="js/smoothscroll.js"></script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
