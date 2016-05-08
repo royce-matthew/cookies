@@ -15,18 +15,18 @@
 }
 #two-in-a-room-p:hover
 {
-	 -webkit-filter: blur(10px);
+	 -webkit-filter: blur(1px);
 	transition:ease-in-out 0.87s;
 }
 
 #two-in-a-room-d:hover
 {
-	 -webkit-filter: blur(10px);
+	 -webkit-filter: blur(1px);
 	transition:ease-in-out 0.87s;
 }
 .greenbox
 {
-	width:calc(100vw - 40px); height:100vh; color:white; background-color:#648453; margin-bottom:10vh; padding:20px;
+	width:calc(100vw - 40px); min-height:100vh; color:white; background-color:#648453; margin-bottom:10vh; padding:20px;
 }
 .triangle
 {
@@ -152,6 +152,10 @@ li a:hover {
 
 }
   @media only screen and (max-width: 800px) {
+  	.greenbox
+  	{
+  		min-height: 280vh;
+  	}
 .triangle
   	{
 
@@ -238,7 +242,7 @@ li a:hover {
 
 
 
-<button id="toggle" onclick="navtalk('',navigation)" style="position:fixed; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px"><img src="images/menu.svg" height="20px"></button>
+<button id="toggle" onclick="navtalk('',navigation)" style="position:fixed; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px; "><img src="images/menu.svg" height="20px"></button>
 <ul  >
 <li><div class="title" 	>
 
@@ -258,14 +262,19 @@ ONE AVISHA RESIDENCES
 </ul>
 
 
+<div style="width:100vw; background:url(images/header.png); background-size: cover ;background-position: 80% 10% ; height:500px; margin:60px 0px; ">
 
+<h4 style="color:white; position: relative; top: calc(100% - 140px); margin:40px; z-index:10; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where function and elegance meet.</span><br> 
 
-
-<div style="height:90vh; width:90vw; margin: calc(5vh + 100px) 5vw; border:solid 3px;; border-radius:20px;">
-
-<h4 align="center">PlaceHolder For Home</h4>
-<hr>
+<button onclick="talk('One Avisha Residences','One Avisha Residences is the newest student dormitory in Katipunan. We built it for students who want to live closer to school. We took into consideration all their preferences in choosing a home- away-from-home and matched it with the latest in terms of room design, layout, and security measures. We did all these because we want you to have the best college experience. So allow us to become your home!')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;">
+Learn More
+</button></h4>
 </div>
+
+
+
+
+
 <hr class="">
 <div class="Rooms row " style="margin: 20px 20px 100px 20px;">
 	<div class="four columns" style=" padding: 20px">
@@ -335,7 +344,92 @@ ONE AVISHA RESIDENCES
 <div class="greenbox">
 
 
-<h4 style="margin-top:10px" align=Center>Amenities</h4>
+<h4 style="margin-bottom:50px" align=Center>Amenities</h4>
+
+<div class="six columns">
+<center style="font-size:15px;">
+<h4 style="margin:40px; font-size:22px">Building Amenities</h4>
+	<div class="row">
+		<div class="four columns" >
+			<img src="images/svg/card.svg" height="64px">
+			<br>
+			 Access card
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/security.svg" height="64px">
+			<br>
+			24/7 Security
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/camera.svg" height="64px">
+			<br>
+			CCTV Cameras
+		</div>
+
+	</div>
+	<hr>
+	<div class="row">
+		<div class="four columns" >
+			<img src="images/svg/laundry.svg" height="64px">
+			<br>
+			On-site Laundry Service
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/food.svg" height="64px">
+			<br>
+			On-sit Food Outlets
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/minimart.svg" height="64px">
+			<br>
+			On-site Minimart
+		</div>
+
+	</div>
+	<hr>
+	<div class="row">
+		<div class="four columns" >
+			<img src="images/svg/lounge.svg" height="64px">
+			<br>
+			Lounge Rooms
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/parking.svg" height="64px">
+			<br>
+			Parking slot
+		</div>
+
+		<div class="four columns" >
+			<img src="images/svg/power.svg" height="64px">
+			<br>
+			Emergency Power Supply
+		</div>
+
+	</div>
+	<hr>
+</center>
+</div>
+
+
+<div class="five columns" >
+<div style="border:solid 1px; padding: 10px; border-radius:20px">
+<h4 align=Center style="font-size:22px; margin:40px">Cool Tagline or Something!</h4>
+	<p>
+	&nbsp;&nbsp;Feel like you’re staying in a hotel with our twin-sized beds, complimentary high speed WiFi, room intercom, refrigerator, microwave, study table (for those hell weeks!), safety deposit box, hot and cold shower. Cable TV can easily be installed. On top of that, there’s also a weekly complimentary housekeeping service to help you keep your room clean and orderly!
+	</p>
+	<p>The building is fully covered with our CCTV cameras and 24/7 security. Residents are given access cards to secure and monitor entry in the building. In cases of emergency, the building has an emergency power supply. Residents can also enjoy the lounge area. In addition to this, there’s no need to go elsewhere due to our on-site laundry service, food outlets and minimart.</p>
+	<center>
+
+    		<button style="margin-top:30px; background-color:white; color:black; border:none; border-radius:0px;" align=Center>Learn More</button>
+</center>
+
+</div>
+</div>
 
 </div>
 <hr>
