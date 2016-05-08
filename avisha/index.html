@@ -31,7 +31,7 @@
 }
 .mobnav{
   color:white;
-  font-size: 25px;
+  font-size: 10px;
   margin-bottom: 0px;  
   text-decoration: none;
 }
@@ -40,8 +40,8 @@
 }
 .sample-photo{border:none 1px white; width:250px; height:300px; margin-top:10px;}
 .modal{
-  top:-100%;
-  left: calc( 15vw - 15px );
+  top:0px;
+  left: -100%;
   position: fixed;
   z-index:30;
   width: 70vw;
@@ -69,8 +69,8 @@
   margin-top: 0px;
   text-align: center;
   height:10vh;
-  width: 50%;
-  font-size: 24px;
+  width: 10%;
+  font-size: 15px;
   font-weight: bold;
   transition: ease-in-out 0.2s;
   border: solid 1px white; }
@@ -150,9 +150,11 @@ li a:hover {
     display:none;
   }
 .modal{
-  left: calc( 5vw  - 15px );
-  width: 90vw;
-  padding: 15px;
+	top:4.5vh;
+  left: -100%;
+  width: 20vw;
+  padding: 0px;
+  height: 100vh;
 }
 }
 </style>
@@ -265,7 +267,7 @@ distance.
 
 
 <div id="modal" class="modal" >
-  <button onclick="xxx();"> Close</button>
+  <button onclick="xxx();">x</button>
 </div>
 
 
@@ -274,18 +276,27 @@ distance.
 
 
 <script>
-navigation = "<center><a href='#' class='mobnav'>Home</a><hr class='spacer' ><a href='#' class='mobnav'>Amenities</a><hr class='spacer'><a href='#' class='mobnav'>Location</a><hr class='spacer'><a href='#' class='mobnav'>Contact Us</a></center>";
+navigation = "<center><hr class='spacer'><a href='#' class='mobnav'><img src='images/png/home.png' height='30px'><br>Home</a><hr class='spacer' >";
+navigation+="<a href='#' class='mobnav'><img src='images/png/bed.png' height='30px'><br>Rooms</a><hr class='spacer' >"
+
+navigation+="<a href='#' class='mobnav'><img src='images/png/social-2.png' height='30px'><br>Amenities</a><hr class='spacer' >"
+
+navigation+="<a href='#' class='mobnav'><img src='images/png/location.png' height='30px'><br>Location</a><hr class='spacer' >"
+
+navigation+="<a href='#' class='mobnav'><img src='images/png/technology.png' height='30px'><br>Contact Us</a><hr class='spacer' >"
+
+navigation+="</center>"
 active=true;
     modal=document.getElementById("modal");
   
-  x="<button onclick='xxx();' class='send-button' style='width:100%;'> Close</button>"
+  x="<button onclick='xxx();' class='send-button' style='width:100%;'> x</button>"
   xxx=function(){
-    modal.style.top="-100%";
+    modal.style.left="-100%";
 active=false;
   };
 
   talk=function(t,s, img1,img2){
-    modal.style.top='3vh';
+    modal.style.left="0px";
     modal.innerHTML=t+" <p style='margin-top:40px'>"+s+"</p><br>"+x;
     active=true; 
    };
