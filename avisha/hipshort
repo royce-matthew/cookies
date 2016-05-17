@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+			
+public class Program
+{
+  public static void Main()
+  {
+    shitsort a = new shitsort();
+    Console.WriteLine("Hello C#");
+  }
+}
+
+public class shitsort
+{
+  List<int> a ; 
+  
+  public shitsort()
+  {
+    a = new List<int>();
+    
+    a.Add(6);
+    
+    a.Add(7);
+    
+    a.Add(5);
+    
+    a.Add(8);
+    a.Add(4);
+    a.Add(9);
+    a.Add(3);
+    
+    summary();
+  	sort();
+  }
+ 	public void summary()
+  { string s = "";
+    for(int i=0 ; i<a.Count; i++)
+    {
+      s+=a[i]+" - ";
+    }
+   Console.WriteLine(s);
+  }
+  
+  public void sort()
+  {
+    List<int> temp = new List<int> (a);
+    a.Clear();
+    for(int i=0 ; i<temp.Count; i++)
+    {
+      insert(temp[i]);
+    }
+    // Heap was built where a[0] is highest 
+    
+    
+    //swap then demote
+    for (int i = a.Count-1; i>1 ;i-- )
+    {
+      summary();
+      int hand = a[0];
+      a[0] = a[i];
+      a[i] = hand;
+      
+      Console.WriteLine("top of the heap was "+ a[i]);
+   
+      int n= i; // n is length of remaining heap
+      Console.WriteLine("heaplength: "+n);
+      
+     	summary();
+     fix(n,0);
+
+    }
+    
+      summary();
+  
+}
+ public void fix( int n, int i)
+{
+    int root = i;  // Initialize largest as root
+    int mrLeft = 2*i + 1;  // left = 2*i + 1
+    int mrRight = 2*i + 2;  // right = 2*i + 2
+ 
+    // If left child is larger than root
+    if ((mrLeft < n) && (a[mrLeft] > a[root]))
+        {root = mrLeft;}
+ 
+    // If right child is larger than largest so far
+    if (mrRight < n && a[mrRight] > a[root])
+        {root = mrRight;}
+ 
+    // If  a[root] is not largest
+    if (root != i)
+    {
+      object temp = a[i];
+      a[i] = root;
+      a[root] = (int)temp;
+        // Recursively heapify the affected sub-tree
+        fix( n, root);
+    }
+}
+  public void insert(int x)
+  {
+    int parentIndex = 0;
+    int indexxx = a.Count; // index of end of array
+    a.Add(x);// add new element at the end of array
+    while (indexxx>0)//Compare the key of the newly added element with it’s parent’s key to check if heap property is observed
+    {
+      parentIndex = (int)((indexxx-1)/2);
+      if (a[indexxx] > a[parentIndex])
+      {
+        int hand = a[indexxx];
+        a[indexxx] = a[parentIndex];
+        a[parentIndex] = hand;
+        indexxx = parentIndex;
+      }
+      else 
+      {
+        break;
+      }
+      
+    }
+    
+  }
+}

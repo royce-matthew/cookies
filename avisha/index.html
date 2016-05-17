@@ -7,28 +7,44 @@
   <meta charset="utf-8">
   <title>One Avisha Residences</title>
 
+<script src="js/jquery.js"></script>
 <script src="js/jquery.easing.min.js"></script>
   <meta name="description" content=" Draft">
   <meta name="author" content="">
 <style>
-#two-in-a-room-p
+#slideshow { 
+    
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+#slideshow > div { 
+}
+.moving{
+}
+#home
 {
 
 }
-#two-in-a-room-p:hover
-{
-	 -webkit-filter: blur(1px);
-	transition:ease-in-out 0.87s;
-}
 
-#two-in-a-room-d:hover
-{
-	 -webkit-filter: blur(1px);
-	transition:ease-in-out 0.87s;
+
+#home:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255, 0.75);
+  transition: all .3s linear;
 }
 .greenbox
 {
-	width:calc(100vw - 40px); min-height:100vh; color:white; background-color:#648453; margin-bottom:10vh; padding:20px;
+	width:calc(100vw - 40px); min-height:200vh; color:white; background-color:#648453; margin-bottom:10vh; padding:20px;
 }
 .triangle
 {
@@ -85,7 +101,7 @@
   max-height: 90vh;
   overflow: scroll;
   color:white;
-  background-color:rgba(47,51,47,0.97);
+  background-color:rgba(30,30,50,0.987);
   padding:30px;
 
   padding-bottom:4vh;
@@ -111,17 +127,21 @@
   transition: ease-in-out 0.2s;
   border: solid 1px white; }
   #woo{padding:20px; margin-top: calc(5% - 20px); }
-ul {
+.mainNav {
 
     list-style-type: none;
     margin: 0px;
     top:-1px;
-    padding: 0;
+    padding: 0px;
     width:100vw;
     overflow: hidden;
-    background-color:#2f332f;
+    background-color:rgba(256,256,256,0.2	);
     position: fixed;
     z-index: 18;
+    vertical-align: center;
+    border:solid 1px rgba(150,150,150,0.7);
+
+    transition: .875s linear;
 }
 
 li {
@@ -130,12 +150,13 @@ li {
 }
 
 li a {
-  font-size:15px;
+  font-size:20px;
     display: block;
-    color: white;
+    color: #154998;
     text-align: center;
     padding: 14px 35px;
     text-decoration: none;
+
 }
 
 .title {
@@ -144,19 +165,18 @@ li a {
     color: white;
     text-align: center;
     margin-top: 10px;
-    padding: 10px 35px;
+    padding: 0px 35px;
     text-decoration: none;
 }
 
 li a:hover {
-  font-size: 24px;
     background-color: rgba(100,132,83,0.08);
 
 }
   @media only screen and (max-width: 800px) {
   	.greenbox
   	{
-  		min-height: 280vh;
+            min-height: 510vh
   	}
 .triangle
   	{
@@ -247,38 +267,120 @@ li a:hover {
 
 
 <button id="toggle" onclick="navtalk('',navigation)" style="position:fixed; top:5px; z-index:100; float:left;border:none; padding:0px; color: white; font-size:20px; margin-left:10px; "><img src="images/menu.svg" height="20px"></button>
-<ul  >
+<ul class="mainNav" >
 
 <li><div class="title" 	>
 
 <center>
 
-<img src="images/sampleLogo.svg" height="32px">
- &nbsp;&nbsp;&nbsp;&nbsp;ONE AVISHA RESIDENCES </center></div></li>
+<img src="images/logo.png" height="42px"> </center></div></li>
 
 
 
 
-  <li><a class="navbutt smoothScroll" href="#home" style=""><img src="images/png/home.png" height="25px"> Home</a></li>
-  <li><a class="navbutt smoothScroll" href="#rooms" style="line-height:1em;"><img src="images/png/bed.png" height="25px" style="margin-right: 5px;">Rooms</a></li>
-  <li><a class="navbutt smoothScroll" href="#amenities" style="line-height:1em;"><img src="images/png/social-2.png" height="25px">Amenities</a></li>
+  <li>
+      <a class="navbutt smoothScroll" href="#home" style=""> Home</a>
+  </li>
+  <li>
+      <a class="navbutt smoothScroll" href="#rooms" style="">Rooms</a>
+</li>
+  <li><a class="navbutt smoothScroll" href="#amenities" style="">Amenities</a></li>
 
-  <li><a class="active navbutt smoothScroll" href="#location" style="line-height:1em;"><img src="images/png/location.png" height="25px">Location</a></li>
+  <li><a class="active navbutt smoothScroll" href="#location" style="">Location</a></li>
 
-  <li><a class="navbutt smoothScroll" href="#contact-us" style="line-height:1em;"><img src="images/png/technology.png" height="25px">Contact Us</a></li>
+  <li><a class="navbutt smoothScroll" href="#contact-us" style="">Contact Us</a></li>
 
 </ul>
 
 
-<div id="home" style="width:100vw; background:url(images/header.png); background-size: cover ;background-position: 80% 10% ; height:500px; margin:60px 0px; ">
 
-<h4 style="color:white; position: relative; top: calc(100% - 140px); margin:40px; z-index:1; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where function and elegance meet.</span><br> 
+<script type="text/javascript">
+  
+//Script to change header
+$(window).scroll(function(){
+      scroll = $(window).scrollTop();
+console.log(scroll);
+      if (scroll>195)
+      {
+        $('.mainNav').css('background-color','rgba(255,255,255,0.92)');
 
-<button onclick="talk('One Avisha Residences','One Avisha Residences is the newest student dormitory in Katipunan. We built it for students who want to live closer to school. We took into consideration all their preferences in choosing a home- away-from-home and matched it with the latest in terms of room design, layout, and security measures. We did all these because we want you to have the best college experience. So allow us to become your home!')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;" id="rooms" class="animated zoomInLeft">
-Learn More
-</button></h4>
+
+      }
+      else
+      {
+
+        $('.mainNav').css('background-color','rgba(255,255,255,0)');
+      }
+
+});
+</script>
+
+<div id="slideshow">
+   <div id="home" style="width:100vw; background:url(images/hd.png); background-size:cover;height:400px; margin:0px 0px; ">
+
+      <h4 style="color:#154998; position: relative; top: calc(100% - 140px); margin-left:42px; z-index:1; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where Function and Elegance meet.</span><br> 
+
+      <button onclick="talk('One Avisha Residences','')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;" id="rooms" class="">
+            Learn More
+      </button>
+      </h4>
+</div>   
+
+<div id="home" style="width:100vw; background:url(images/b.png); background-size:cover;height:400px; background-position:-20%; ; margin:0px 0px; ">
+
+      <h4 style="color:#154998; position: relative; top: calc(100% - 140px); margin-left:42px; z-index:1; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where Function and Elegance meet.</span><br> 
+
+      <button onclick="talk('One Avisha Residences','')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;" id="rooms" class="">
+            Learn More
+      </button>
+      </h4>
+</div>  
+
+
+<div id="home" style="width:100vw; background:url(images/a.png); background-size:cover;height:400px; margin:0px 0px; ">
+    <h4 style="color:#154998; position: relative; top: calc(100% - 140px); margin-left:42px; z-index:2; font-size:28px;">One Avisha Residences <br><span style="font-size:20px; margin-top:10px">where Function and Elegance meet.</span><br> 
+
+      <button onclick="talk('One Avisha Residences','')" style="background-color:#ea967c; color:white; border:none; border-radius:0px;" id="rooms" class="">
+            Learn More
+      </button>
+      </h4>
+   </div>
+
+   
 </div>
 
+<script>
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .hide(0)
+    .next()
+    .fadeIn(0)
+    .end()
+    .appendTo('#slideshow');
+},  5000);
+</script>
+
+&nbsp;
+<br>
+<br>
+<hr>
+
+<h4 align=Center style="margin-top:60px">One Avisha Residences</h4>
+<div class="row">
+
+<center>
+<div class="three columns">
+<img src="images/small.png" width="100px">
+<br>
+<br>
+</div>
+</center>
+<p class="six columns container" style="margin-left:40px;">
+One Avisha Residences is the newest student dormitory in Katipunan. We built it for students who want to live closer to school. We took into consideration all their preferences in choosing a home- away-from-home and matched it with the latest in terms of room design, layout, and security measures. We did all these because we want you to have the best college experience. So allow us to become your home!
+</p>
+</div>
 
 
 
@@ -290,7 +392,7 @@ Learn More
 		<p>You value privacy. So do we. The number of people sharing a room is limited in order to maximize personal space per person. White walls and dark accents – minimalist – is our style for the interiors of the rooms. All air-conditioned rooms come with twin-sized beds, refrigerator, individual study table and safety deposit box, and bathrooms en suite. Rooms are Cable TV ready.
  </p>
 		<center>
-		<button style="color:white; background-color:#648453; border-radius:0px; border:none" onclick="talk('Gallery',galleryLayout)">View Gallery</button >
+		<button style="color:white; background-color:#648453; border-radius:0px; border:none" onclick="talk('Gallery',galleryLayout)">View Rates</button >
 		</center>
 		<hr>
 
@@ -298,56 +400,55 @@ Learn More
 
 	<div class="seven columns row" style="">
 		
-		<div class="one-third column" id="two-in-a-room-p">
+	<div class="" id="two-in-a-room-p">
 			<div style="height:200px; width: 100%;  background: url(images/a.png); 
     		background-repeat: no-repeat;
    			 background-position: 3% 25%;">
    			 </div>
 	    	<p style="font-size:25px; margin:0px; color:rgb(20,20,20)">Two in a Room</p>	
 		    <p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Premiere)</p>
-		    <p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd<br>
     		<button style="margin-top:30px; background-color:#ea967c; border:none; border-radius:0px; color:white;" 
     		onclick="talk('<h4>'+rates[0][0]+'</h4>','<br>Monthly: No Lock in : '+rates[0][1]+'<br>Yearly: Lock in (12 Months): '+rates[0][2]+'<hr><h5>Other Rates:</h5>'+magicTable)"
 
-    		>View Rates</button> <hr>	</p>
+    		>View Gallery</button> <hr>	</p>
 
 
 		</div>
 	
-	<div class="one-third column" id="two-in-a-room-d">
+	<div class="" id="two-in-a-room-d">
 			<div style="height:200px; width: 100%;  background: url(images/b.png); 
     		background-repeat: no-repeat;
-    		background-position: 60% 25%;">
+    		background-position: 60% 45%;">
     		</div>
     	<p style="font-size:25px; margin:0px; color:rgb(20,20,20)">Two in a Room</p>
 	    <p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Deluxe)</p>
-		<p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd<br>
+		<p style="font-size:13px; margin: 10px 10px 40px 10px"><br>
     		<button style="margin-top:30px; background-color:#1ea6b0; border:none; border-radius:0px; color:white;" 
     		onclick="talk('<h4>'+rates[1][0]+'</h4>','<br>Monthly: No Lock in : '+rates[1][1]+'<br>Yearly: Lock in (12 Months): '+rates[1][2]+'<hr><h5>Other Rates:</h5>'+magicTable)"
-    		>View Rates</button> <hr>	</p>
+    		>View Gallery</button> <hr>	</p>
 
     </div>
 
 
-		<div class="one-third column" id="three-in-a-room">
+		<div class="" id="three-in-a-room">
 			
 			<div style="height:200px; width: 100%;  background: url(images/c.png); 
     		background-repeat: no-repeat;
     		background-position: 60% 55%;"></div>
     		<p style="font-size:25px; margin:0px; color:rgb(20,20,20)">Three in a Room</p>
     		<p style="font-size:13px; margin:0px; color:rgb(90,90,90)">(Deluxe)</p>
-    		<p style="font-size:13px; margin: 10px 10px 40px 10px">Sample Contents here... I guess ... I dunno asdf anjn amkm askmd <br>
 
     		<button style="margin-top:30px; background-color:#423151; color:white; border:none; border-radius:0px;" 
-    		onclick="talk('<h4>'+rates[2][0]+'</h4>','<br>Monthly: No Lock in : '+rates[2][1]+'<br>Yearly: Lock in (12 Months): '+rates[2][2]+'<hr><h5>Other Rates:</h5>'+magicTable)">View Rates</button>
+    		onclick="talk('<h4>'+rates[2][0]+'</h4>','<br>Monthly: No Lock in : '+rates[2][1]+'<br>Yearly: Lock in (12 Months): '+rates[2][2]+'<hr><h5>Other Rates:</h5>'+magicTable)">View Gallery</button>
     		<hr>	</p>
 		</div>
 
 	</div>
 
 </div>
+
 <script>
-rates = [["Two in a Room (Premiere 32 sqm) ", "Php 12,500", "PhP 140,000"],["Two in a Room (Deluxe, 26 sqm)", "Php 10,500", "PhP 118,000"],["Three in a Room", "Php 8,500", "PhP 96,000"]];
+rates = [[" ", "Php 12,500", "PhP 140,000"],["Two in a Room (Deluxe, 26 sqm)", "Php 10,500", "PhP 118,000"],["Three in a Room", "Php 8,500", "PhP 96,000"]];
 
 magicTable= "<table><thead><td>Room Type</td><td>Per month <br>(No lock-in)</td><td>Per year<br>(12 month lock-in)</td></thead> ";
 
@@ -435,13 +536,101 @@ magicTable +="</table>"
 
 	</div>
 	<hr>
+
+<hr>
+<div class="row">
+	<div class="three columns">
+		
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Twin Sized Beds
+
+	</div>
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Room intercom
+		</div>
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Complimentary in-room WiFi
+		</div>
+
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Refrigerator
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="three columns">
+		
+		<img src="images/png/a.png" height="64px">
+		<br>
+		Twin Sized Beds
+
+	</div>
+	<div class="six columns"><h5>
+
+		<img src="images/svg/power.svg" height="42px">
+		<br>
+		Room Amenities</h5></div>
+
+	<div class="three columns">
+		
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Twin Sized Beds
+
+	</div>
+</div>
+<hr>
+
+
+<div class="row">
+	<div class="three columns">
+		
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Twin Sized Beds
+
+	</div>
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Room intercom
+		</div>
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Complimentary in-room WiFi
+		</div>
+
+	<div class="three columns">
+
+		<img src="images/svg/power.svg" height="64px">
+		<br>
+		Refrigerator
+	</div>
+</div>
+
+
 </center>
+
+<hr>
 </div>
 
 
 <div class="five columns" >
 <div style="border:solid 1px; padding: 10px; border-radius:20px">
-<h4 align=Center style="font-size:22px; margin:40px">Cool Tagline or Something!</h4>
+<h4 align=Center style="font-size:22px; margin:40px">Amenities</h4>
 	<p>
 	&nbsp;&nbsp;Feel like you’re staying in a hotel with our twin-sized beds, complimentary high speed WiFi, room intercom, refrigerator, microwave, study table (for those hell weeks!), safety deposit box, hot and cold shower. Cable TV can easily be installed. On top of that, there’s also a weekly complimentary housekeeping service to help you keep your room clean and orderly!
 	</p>
@@ -450,6 +639,20 @@ magicTable +="</table>"
 
     		<button style="margin-top:30px; background-color:white; color:black; border:none; border-radius:0px;" align=Center>Learn More</button>
 </center>
+
+
+
+</div>
+<div style="padding:10px;margin-top:50px; border:solid 1px; border-radius: 20px">
+<h4 align=Center style="font-size:22px; margin:40px">Security / Safety (Hold Daw)</h4>
+<p>
+&nbsp;&nbsp;Dear parents, we know safety is your utmost concern. Do not worry about your children; they are safe in our facility. Our buildings are equipped with CCTV cameras while the round-the-clock security service will keep the peace. We also issue key cards to them to ensure they are the only ones who may enter the dormitory areas.
+<hr>
+
+<center>
+    		<button style="margin-top:30px; background-color:white; color:black; border:none; border-radius:0px;" align=Center>Learn More</button>
+ </center>
+</p>
 
 </div>
 </div>
@@ -542,56 +745,6 @@ One Avisha Residences
 <hr>
 
 
-<footer style="min-height:40vh; width: (100vw - 40px); padding:20px; 
-    background-color:#2f332f; color:white;">
-    <h4>This is a Sample Footer !</h4>
-    <p>Sample Subtext</p>
-    <hr>
-    <br>
-
-    <div class="row">
-    	<div class="four columns" style="border: solid 0px; border-right: solid 2px; padding:10px">
-    		Hello
-    		<br>
-    		Something
-    		<br>
-    		Some footer Content
-    		<br>
-    		<a href="#">Maybe a link?</a>
-    		<hr>
-    		Maybe not?
-    		<br>
-    		Your choice
-    	</div>
-
-    	<div class="four columns" style="border: solid 0px; border-right: solid 2px; padding:10px">
-    		Hello
-    		<br>
-    		Something
-    		<br>
-    		Some footer Content
-    		<br>
-    		<a href="#">Maybe a link?</a>
-    		<hr>
-    		Maybe not?
-    		<br>
-    		Your choice
-    	</div>
-    	
-    	
-
-    	
-    	<div class="three columns">
-    	<img src="images/panpan.png" width="180px" >
-
-    	</div>
-
-    </div>
-    <hr>
-    <br>
-    <p align=Center>Copyright 2016 <br> Powered by <a href="#">Ateneo MISA</a></p>
-</footer>
-
 
 <div id="navmodal" class="navmodal" >
   <button onclick="navxxx();">x</button>
@@ -606,7 +759,9 @@ One Avisha Residences
 
 
 
-<script src="js/jquery.js"></script>
+
+
+
 <script>
 navigation = "<center><hr class='spacer'><a href='#home' class='mobnav smoothScroll'><img src='images/png/home.png' height='30px'><br>Home</a><hr class='spacer' >";
 navigation+="<a href='#rooms' class='mobnav'><img src='images/png/bed.png' height='30px'><br>Rooms</a><hr class='spacer' >"
