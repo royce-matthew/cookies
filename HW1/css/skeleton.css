@@ -134,7 +134,8 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+  color: #222; 
+transition: ease-in 0.275s;}
 
 
 /* Typography
@@ -184,13 +185,12 @@ a {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
-  transition: ease-in 0.875s;
+  transition: ease-in 0.375s;
 }
 a:hover {
 
   font-size: 13px;
 }
-
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
