@@ -185,7 +185,17 @@ a {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
-  transition: ease-in 0.375s;
+-webkit-transition: all 355ms cubic-bezier(0.330, 1, 1.000, 1); /* older webkit */
+-webkit-transition: all 355ms cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+   -moz-transition: all 305ms cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+     -o-transition: all 305ms cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+        transition: all 305ms cubic-bezier(0.330, 1.295, 1.000, 1.080); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.330, 1, 1.000, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+   -moz-transition-timing-function: cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+     -o-transition-timing-function: cubic-bezier(0.330, 1.295, 1.000, 1.080); 
+        transition-timing-function: cubic-bezier(0.330, 1.295, 1.000, 1.080); /* custom */
 }
 a:hover {
 
