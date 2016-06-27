@@ -21,3 +21,9 @@ body
 	border-left:solid 1px #dee;
 	padding:10px;
 }
+
+@media (max-width: 750px) {
+	.zoid{
+		display:none;
+	}
+}
