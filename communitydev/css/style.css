@@ -1,0 +1,23 @@
+.magicbutton{
+padding: auto;
+ background: #57bc90;
+font-size:12px;
+ color:white; border-radius:0px; 
+ border:none;
+}
+body
+{
+
+}
+.spacer
+{
+	height:20px;
+	background-color:#57bc90;
+	width:100%;
+	margin-bottom:40px;
+}
+.promo
+{
+	border-left:solid 1px #dee;
+	padding:10px;
+}
