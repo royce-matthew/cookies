@@ -21,9 +21,21 @@ body
 	border-left:solid 1px #dee;
 	padding:10px;
 }
-
+.header
+{
+	background: url(https://www.fraunhofer.de/content/dam/zv/en/Research%20Topics/Health/hospital-engineering-laboratory/ISST13_HospitalEngineering%2003.jpg); 
+	background-size:cover; 
+	width:100vw; height:500px; 
+	background-position:100% 200%; 
+	background-attachment: fixed; 
+	border-bottom:solid 2px rgba(0,0,0,0.4);
+}
 @media (max-width: 750px) {
 	.zoid{
 		display:none;
+	}
+	.header
+	{
+		height:300px;
 	}
 }
