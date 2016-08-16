@@ -1,10 +1,19 @@
 <html>
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
 <body>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div class="container" style="margin-top:20%">
+<h4>Add an Event to Eventbrite Acct</h4>
 <input id="event_name" placeholder="title">
+<input id="event_description" type="text" placeholder="description">
 <button onclick="make();">Make</button>
+</div>
 <script>
 function make(){
     $.ajax({
@@ -13,7 +22,8 @@ function make(){
         // http://en.wikipedia.org/wiki/Same_origin_policy
         url: 'https://www.eventbriteapi.com/v3/events/?token=NEJR3GV4XY5C3WWNBQAY',
         data: { 
-            'event.name.html': '<h1>'+$('#event_name').val()+'</h1>', 
+            'event.name.html': '<h1>'+$('#event_name').val()+'</h1>',
+            'event.description.html': '<h1>'+$('#event_description').val()+'</h1>', 
             "event.start.timezone": "Asia/Hong_Kong",
             "event.end.timezone": "Asia/Hong_Kong",  
                     "event.start.utc": "2016-09-16T13:00:00Z",

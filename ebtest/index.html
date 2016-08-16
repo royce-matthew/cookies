@@ -1,10 +1,23 @@
 <html>
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
 <body>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div class="container" style="margin-top:10%">
+<a href="post.html">Add an Event to Papja's Eventbrite Acct</a>
 <h1>Displaying All Events from EventBrite Acct</h1>
+
+<table id="eventbrite"></table>
+</div>
 <script>
+
 
   var settings = {
     "async": true,
@@ -20,7 +33,7 @@
     data.events.forEach(function(f){
       content+="<tr>"
       content+= "<td><a href='"+f.url+"'>"+f.name.text+"</td>";
-      content+= "<td>"+f.start+"</td>";
+      content+= "<td>"+f.start.utc+"</td>";
       content+= "<td>"+f.description.text+"</td>";
 
       content+="</tr>"
@@ -30,6 +43,5 @@
 </script>
 
 
-<table id="eventbrite"></table>
 </body>
 </html>
