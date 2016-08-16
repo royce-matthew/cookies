@@ -1,0 +1,32 @@
+<html>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<h1>Displaying All Events from EventBrite Acct</h1>
+<script>
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.eventbriteapi.com/v3/users/me/owned_events/?token=NEJR3GV4XY5C3WWNBQAY",
+    "method": "GET",
+    "headers": {}
+  }
+
+  $.ajax(settings).done(function (data) {
+    console.log(data);
+    content=""
+    data.events.forEach(function(f){
+      content+="<tr>"
+      content+= "<td><a href='"+f.url+"'>"+f.name.text+"</td>";
+      content+= "<td>"+f.description.text+"</td>";
+
+      content+="</tr>"
+    });
+    $("#eventbrite").append(content);
+  });
+</script>
+
+
+<table id="eventbrite"></table>
+</body>
+</html>
