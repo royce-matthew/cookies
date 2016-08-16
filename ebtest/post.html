@@ -1,0 +1,35 @@
+<html>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<input id="event_name" placeholder="title">
+<button onclick="make();">Make</button>
+<script>
+function make(){
+    $.ajax({
+        type: 'POST',
+        // make sure you respect the same origin policy with this url:
+        // http://en.wikipedia.org/wiki/Same_origin_policy
+        url: 'https://www.eventbriteapi.com/v3/events/?token=NEJR3GV4XY5C3WWNBQAY',
+        data: { 
+            'event.name.html': '<h1>'+$('#event_name').val()+'</h1>', 
+            "event.start.timezone": "Asia/Hong_Kong",
+            "event.end.timezone": "Asia/Hong_Kong",  
+                    "event.start.utc": "2016-09-16T13:00:00Z",
+                    "event.end.utc": "2016-09-16T13:10:00Z",
+                    "event.currency":"PHP"
+        },
+        success: function(msg){
+            alert('Event ' + msg + ' made ... yaay');
+            console.log(msg);
+            window.location.href = "index.html";
+        },
+        error: function(err)
+        {
+            console.log(err.responseText);
+        }
+    });
+}
+
+</script>
