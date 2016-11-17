@@ -1,0 +1,45 @@
+<html>
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div class="container" style="margin-top:10%">
+<a href="post.html">Add an Event to Papja's Eventbrite Acct</a>
+
+
+<table id="eventbrite"></table>
+</div>
+
+<script>
+
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.eventbriteapi.com/v3//events/27114171216/attendees/?token=NEJR3GV4XY5C3WWNBQAY",
+    "method": "GET",
+    "headers": {}
+  }
+
+  $.ajax(settings).done(function (data) {
+    console.log(data);
+    content="";
+    data.attendees.forEach(function(f)
+    {
+        $("#eventbrite").append((f.barcodes[0].barcode) + ",");
+    }
+    );
+    
+  });
+</script>
+
+
+</body>
+</html>

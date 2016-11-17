@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Hang Manong</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<style>
+input:focus {
+    outline:none;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+</style>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<style>
+.menu-item{font-size:14pt; color:white; text-decoration:none;}
+.menu-item:hover{font-size:16pt; }
+</style>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<img src="images/bg.png" style="width:calc(100% + 60px);height:calc(100% + 60px); top:-30px; left:-30px; position:absolute; -webkit-filter:blur(15px); " >
+
+<div style="position:absolute; top: calc(50% - 300px); left: calc(50% - 450px);  height:580px; width:980px; background:rgba(10,10,10,0.6); border-radius:10px; padding:10px;">
+<center>
+  <h3 style="color:rgba(220,220,220,0.99); margin-top:30px;">
+  Hangman
+</h3>
+
+<h4 style="color:rgba(220,220,220,0.99);" id="details2">Available Letters: </h4>
+  <p id="display" style="color:rgba(220,220,220,0.99); margin-top:30px;position:absolute;">
+</p>
+
+<img src="images/base.png" style="position:absolute; left:680px; top:220px" id="img" height= "350px">
+
+  <h2 id="display2" style="color:rgba(220,220,220,0.99); margin-top:30px;">
+
+Details
+</h2>
+
+  <div >
+
+      <input id="in" style="width:90px; font-size:60px; background:transparent; color:white; padding:10px;  border-top:transparent; border-left:transparent; border-right:transparent; text-align:center;" placeholder=" ">
+
+
+  </div>
+
+  <button onclick="save();">Submit</button>
+  <h6 id="wa" style="color:white;">wrong answers:0</h6>
+
+</center>
+</div>
+
+
+
+<script>
+wa = document.getElementById("wa");
+display=document.getElementById("display");
+details2=document.getElementById("details2");
+display2=document.getElementById("display2");
+inz=document.getElementById("in");
+img=document.getElementById("img");
+win=false;
+letters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+nx = "antonio-luna";
+word=[];
+count=0;
+while(count<nx.length)
+{
+	console.log(nx[count]);
+	word.push(nx[count]);
+	count++;
+}
+
+usedletters=[];
+display2.innerHTML="";
+i=0;
+wrong = 0;
+save=function()
+{
+  usedletters.push(inz.value.toLowerCase());
+  index = letters.indexOf(inz.value.toLowerCase());
+  if (index > -1)
+  {
+  	letters.splice(index,1);
+
+  }
+
+if (!(word.indexOf(inz.value.toLowerCase())>-1))
+{
+wrong++;
+}
+  usedletters.sort();
+  inz.value="";
+  refresh();
+
+
+
+};
+refresh=function(){
+  i=0;
+  display2.innerHTML="";
+  word.forEach(function(f){
+if (usedletters.indexOf(f)>-1)
+{
+  display2.innerHTML+=(" "+f);
+console.log("true");
+
+}
+else
+{display2.innerHTML+=(" _");
+console.log(f);
+i++;
+}
+console.log(usedletters);
+  });
+  display.innerHTML=" ";
+//  usedletters.forEach(function(k){
+
+  //display.innerHTML+=(" "+k);
+
+//  })
+    wa.innerHTML="Wrong Answers:  "+wrong;
+  console.log(wrong+" wrong")
+  if (i<=0)
+  {
+    win=true;
+  }
+  else
+  {
+    win=false; 
+  }
+  if (win)
+    {wa.innerHTML="You Win"}
+
+details2.innerHTML="Available Letters:";
+letters.forEach(function(x){
+details2.innerHTML+=(" "+x)
+if (wrong==1)
+{
+  img.src="images/0.png";
+}
+else if (wrong==2)
+{
+    img.src="images/1.png";
+}
+else if (wrong==3)
+{
+    img.src="images/2.png";
+}
+else if (wrong==4)
+{
+    img.src="images/3.png";
+}
+else if (wrong==5)
+{
+    img.src="images/4.png";
+}
+else if (wrong>=6)
+{
+  wa.innerHTML="You Lose"
+    img.src="images/5.png";
+    display2.innerHTML=nx;
+}
+})
+
+}
+
+
+
+inz.addEventListener("keypress",function(e){
+console.log(e.charCode);
+if (e.charCode==13)
+  {save();
+}
+})
+
+refresh();
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
