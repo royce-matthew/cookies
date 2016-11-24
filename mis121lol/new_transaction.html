@@ -33,26 +33,42 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="" style="margin-top: 5%">
-        <h4>Reports Generation</h4>
+     <h4 style="margin-bottom:0px;">Create New System Transaction</h4>
+        <h5 style="font-size:1.2em; color:#004e7e;">Customer: Royce Matthew Chan</h5>
         <hr>
-          <h6>From <input type="date" value="2016-10-01"> to <input type="date" value="2016-12-01"><br> Branch: &nbsp;<select>
-            <option active>All Branches</option>
-            <option active>Marikina Branch</option>
-            <option active>Iloilo Branch</option>
-          </select>
+      <div class="row" style="margin-top: 5%">
+       
+        <div class="six columns">
+        <label>Cash Transaction</label>
+          <input type="text" placeholder="Amount">
+          <label>Notes</label>
+          <textarea></textarea>
+          <br>
+          <input type="submit" value="Cash Transaction">
+          
+          </div>
 
+        <div class="six columns">
+        <label>Loan Payment</label>
+        <select>
+          <option>XRM 3000</option>
+          <option>XRM 3000</option>
+          
+        </select>
 
-          <button>Generate</button></h6>
-          <table>
-          <tr><td> Total Sales: </td><td>18 000 000</td></tr>
-          <tr><td> Total Cash Sales: </td><td>7 500 000</td></tr>
-          <tr><td> Total AR Sales: </td><td>11 500 000</td></tr>
-          <tr><td> Uncollected Dues: </td><td>1 300 600</td></tr>
-          </table>
-
+          <input placeholder="Amount" type="text">
+          <br>
+        <label>Notes</label>
+          <textarea></textarea>
+          <br>
+          <input type="submit" value="Loan Payment">
+        
+        </div>
       </div>
     </div>
+
+  <hr>
+  <button style="border-color:rgba(200,0,0,0.6);color:rgba(200,0,0,0.6)">Cancel</button>
   </div>
 
 <!-- End Document
