@@ -57,10 +57,10 @@ h5
 {
 	color:#D0011B;
 }
-#about,#history{
+.about,.history{
 padding:140px 170px;
 }
-#banner{
+.banner{
 
 	display:flex;
 	height: 220px;
@@ -69,6 +69,6 @@ padding:140px 170px;
 	color:white;
 }
 
-#history{
+.history{
 
 }
