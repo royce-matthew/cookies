@@ -20,10 +20,12 @@ body{
 }
 h2
 {
+
 	font-size:48px;
 }
 h3
 {
+	margin-top: 20px;
 	font-size:41px;
 }
 h5
@@ -40,6 +42,7 @@ h5
 .sect_head
 {
 	font-weight: medium; font-size:28px;
+	margint-bottom:20px;
 }
 .btn
 {
@@ -71,4 +74,35 @@ padding:140px 170px;
 
 .history{
 
+}
+.redline
+{
+	border-top: 1px solid #D0011B;
+}
+.row
+{
+	display: flex;
+	margin-top: 80px;
+
+}
+.image
+{
+	background-color: #004e7e;
+	height:450px;
+	width:450px;
+}
+.row>.half{
+width: 50%;
+}
+@media(max-width:1200px){
+.row{display:block;}
+.row>.half{
+	width:100%;
+}
+.history,.about{
+	padding:20px 20px;
+}
+.hero{
+	padding:80px 20px;
+}
 }
