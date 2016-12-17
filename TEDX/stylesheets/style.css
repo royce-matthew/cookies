@@ -98,8 +98,12 @@ p
 {
 	color:#D0011B;
 }
-.about,.history,.ready,.talks{
+.about,.history,.talks{
 padding:140px 170px;
+}
+.ready
+{
+	padding:70px 170px 100px 170px;
 }
 .banner{
 
