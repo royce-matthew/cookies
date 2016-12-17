@@ -117,8 +117,8 @@ padding:140px 170px;
 	display:flex;
 	height: 320px;
 	padding:40px 170px;
-	background:url(../images/banner.png);
 	background-size: cover;
+	background:url(../images/banner.png);
 	color:white;
 }	
 
