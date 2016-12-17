@@ -1,0 +1,59 @@
+body{	
+
+	margin:0px;
+	font-family: 'Roboto', sans-serif;
+}
+.hero{
+	display:flex;
+	height: 500px;
+	padding:80px 179px;
+	background:#004e7e;
+	color:white;
+}
+
+.sub{
+	margin-bottom: 50px;
+}
+.box
+{
+	margin-top:auto;
+}
+h2
+{
+	font-size:48px;
+}
+h3
+{
+	font-size:41px;
+}
+.imagine
+{
+	margin-top:36px;
+	font-size:21px;
+}
+.sect_head
+{
+	font-weight: medium; font-size:28px;
+}
+.btn
+{
+	background-color: #D0011B;
+	color:white;
+	text-decoration: none;
+	padding:20px  40px ;
+	font-weight: bold;
+}
+.sans
+{
+	font-family: 'Open Sans', sans-serif;
+}
+.red
+{
+	color:#D0011B;
+}
+.about{
+padding:140px 170px;
+}
+.history{
+
+}
