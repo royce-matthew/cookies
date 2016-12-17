@@ -18,6 +18,11 @@ body{
 {
 	margin-top:auto;
 }
+h1
+{
+	font-weight: bold;
+	font-size: 48px;
+}
 h2
 {
 
@@ -34,8 +39,16 @@ h5
 	line-height: 54px;
 	font-weight: 200;
 }
+p
+{
+	font-size:16px;
+	line-height: 30px;
+	color:#707070;
+}
 .imagine
 {
+	color:#000000;
+	font-weight: 300;
 	margin-top:36px;
 	font-size:21px;
 }
@@ -48,6 +61,7 @@ h5
 {
 	background-color: #D0011B;
 	color:white;
+	width:267px;
 	text-decoration: none;
 	padding:20px  40px ;
 	font-weight: bold;
@@ -60,7 +74,7 @@ h5
 {
 	color:#D0011B;
 }
-.about,.history{
+.about,.history,.ready,.talks{
 padding:140px 170px;
 }
 .banner{
@@ -85,11 +99,12 @@ padding:140px 170px;
 	margin-top: 80px;
 
 }
+
 .image
 {
 	background-color: #004e7e;
-	height:450px;
-	width:450px;
+	height:500px;
+	width:500px;
 }
 .row>.half{
 width: 50%;
