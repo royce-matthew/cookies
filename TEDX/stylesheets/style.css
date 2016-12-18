@@ -187,7 +187,7 @@ padding:140px 170px;
 .row>.half{
 width: 50%;
 }
-@media(max-width:1200px){
+@media(max-width:1000px){
 .desc{
 	margin: 0px 20px 100px 20px;
 }
