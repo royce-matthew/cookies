@@ -75,10 +75,10 @@ p
 }
 .group
 {
-	width:100%; height:500px; background:url(../images/group.png);
+	max-width:100%; height:500px; background:url(../images/group.png);
 	background-size:cover; 
 	margin: 70px auto 90px auto;
-	max-width:1200px;
+
 }
 
 .imagine
