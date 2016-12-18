@@ -15,12 +15,13 @@ nav{
 }
 
 
-.logo,.others
+.logo
 {
 	margin-top:auto;
 }
 .others
 {
+	margin-top:30px;
 	padding:0px;
 	display:flex;
 	align-items: center;
