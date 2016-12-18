@@ -10,6 +10,7 @@ body{
 	padding:80px 179px;
 	background:url(../images/hero.png);
 	background-size: cover;
+	background-position: 50% 10%;
 	color:white;
 }
 
@@ -74,9 +75,12 @@ p
 }
 .group
 {
-	width:100%; height:440px; background:url(../images/group.png);
-	background-size:cover; margin-top:70px; margin-bottom:90px;
+	width:100%; height:500px; background:url(../images/group.png);
+	background-size:cover; 
+	margin: 70px auto 90px auto;
+	max-width:1200px;
 }
+
 .imagine
 {
 	color:#000000;
@@ -144,10 +148,17 @@ padding:140px 170px;
 	height:500px;
 	width:500px;
 }
+.desc
+{
+	margin: 0px 50px;
+}
 .row>.half{
 width: 50%;
 }
 @media(max-width:1200px){
+.desc{
+	margin: 0px 20px 100px 20px;
+}
 .row{display:block;}
 .row>.half{
 	width:100%;
@@ -156,10 +167,21 @@ width: 50%;
 {
 	margin:100px auto 50px auto;
 }
-.history,.about,.talks,.ready{
+.image{
+	width:100%;height:500px;
+}
+.ready
+{
+	padding:100px 20px;
+}
+.history,.about,.talks,.banner{
 	padding:20px 20px;
 }
 .hero{
 	padding:80px 20px;
+}
+
+h1,h2,h3,h4,h5,h6,.sub,.imagine{
+	font-size: 200%!important;
 }
 }
