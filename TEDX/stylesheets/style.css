@@ -177,11 +177,12 @@ width: 50%;
 	padding:80px 20px;
 }
 
-h1,h2,h3,h4,h5,h6,.sub,.imagine{
+h1,h2,h3,h4,h5,h6,.sub{
 	font-size: 200%!important;
 }
 .imagine
 {
+	font-size: 170%!important;
 	line-height: 1.3em;
 }
 }
