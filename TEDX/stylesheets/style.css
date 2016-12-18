@@ -180,4 +180,8 @@ width: 50%;
 h1,h2,h3,h4,h5,h6,.sub,.imagine{
 	font-size: 200%!important;
 }
+.imagine
+{
+	line-height: 1.3em;
+}
 }
