@@ -126,6 +126,10 @@ p
 	font-weight: medium; font-size:28px;
 	margin-bottom:20px;
 }
+.down
+{
+	margin-top:auto
+}
 .btn
 {
 	background-color: #D0011B;
@@ -134,6 +138,10 @@ p
 	text-decoration: none;
 	padding:20px  40px ;
 	font-weight: 300;
+	font-size:18px;
+	display:flex;
+	vertical-align: center;
+	justify-content: space-around;
 }
 .sans
 {
