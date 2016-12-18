@@ -177,6 +177,7 @@ padding:140px 170px;
 .image
 {
 	display:flex;
+	width:100%;
 	max-width: 500px;
 }
 .desc
