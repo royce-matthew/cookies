@@ -10,6 +10,7 @@ nav{
 	 font-size:2em; height:100px; max-width:100vw;
 	  width: calc(100vw - 400px); padding:0px 200px; 
 	  justify-content: space-between;
+	  transition:ease-in-out 0.27s;
 }
 .logo,.others
 {
