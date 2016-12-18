@@ -51,17 +51,19 @@ console.log(scroll);
       	logo.src="images/black.png";
         $('nav').css('background-color','rgba(255,255,255,1)');
 
-        $('nav').css('height','80px');
          $('.nav-item,.apply').css('color','rgba(0,0,0,0.7)');
          $('.logo,.others').css('margin-top','10px');
+         $('nav').css('border-bottom','solid 1px rgba(0,0,0,0.4)');
 
 
       }
       else
       {
+
+         $('nav').css('border-bottom','solid 1px rgba(0,0,0,0)');
+
 		logo.src="images/white.png";
         $('nav').css('background-color','rgba(255,255,255,0)');
-        $('nav').css('height','100px');
          $('.nav-item,.apply').css('color','rgba(255,255,255,1)');
 
 
@@ -78,7 +80,7 @@ console.log(scroll);
 	    <div class="box">
 	    <h2>Change Perspectives</h2>
 	    <p class="sub"  id="countdown"></p>
-	    <a href="#" class="btn">Apply for TEDx ADMU 2017 ></a>
+	    <a href="#" class="btn">Apply for TEDxADMU 2017 ></a>
 	    </div>
 	</section>
 

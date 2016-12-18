@@ -11,6 +11,7 @@ nav{
 	  width: calc(100vw - 400px); padding:0px 200px; 
 	  justify-content: space-between;
 	  transition:ease-in-out 0.27s;
+	  flex-direction:columns;
 }
 
 
@@ -188,6 +189,25 @@ padding:140px 170px;
 width: 50%;
 }
 @media(max-width:1000px){
+	#logo
+	{
+		width:100px!important; height:auto!important;
+	}
+	.apply
+	{
+		font-size:10px!important;
+		padding:10px 20px;
+	}
+	nav
+	{
+		padding: 10px 30px;
+		align-content:space-between;
+		width: calc( 100vw - 60px);
+		height:auto!important;
+	}
+
+	.nav-item
+	{display:none;}
 .desc{
 	margin: 0px 20px 100px 20px;
 }
