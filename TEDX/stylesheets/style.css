@@ -163,10 +163,6 @@ width: 50%;
 .row>.half{
 	width:100%;
 }
-.half>.image
-{
-	margin:100px auto 50px auto;
-}
 .image{
 	width:100%;
 	height: calc(100vw - 40px);
