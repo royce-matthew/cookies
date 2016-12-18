@@ -34,6 +34,7 @@ nav{
 }
 .apply
 {
+	font-weight: bold;
 	padding:10px 25px;
 	border:solid 2px;
 }
@@ -199,7 +200,7 @@ width: 50%;
 @media(max-width:1000px){
 	#logo
 	{
-		width:100px!important; height:auto!important;
+		width:180px!important; height:auto!important;
 	}
 	.apply
 	{
